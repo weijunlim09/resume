@@ -1,68 +1,42 @@
 import Image from "next/image";
-import Link from "next/link";
+import profilePic from "../public/Header/lwj.png";
 import styles from "../styles/Header.module.scss";
 
 const Header = () => {
-  const IMAGE_HEIGHT = "20";
-  const IMAGE_WIDTH = "20";
+  const IMAGE_HEIGHT = "25";
+  const IMAGE_WIDTH = "25";
+  const icon8UrlPrefix = "http://img.icons8.com/";
 
+  const whatappsIcon = `${icon8UrlPrefix}/ios-glyphs/30/000000/whatsapp.png`;
+  const emailIcon = `${icon8UrlPrefix}/ios-filled/50/000000/mail.png`;
   return (
     <>
-      <nav className={styles.headerMain}>
-        <div className={styles.leftHeader}>
-          <h1>Resume</h1>
+      <div className={styles["header-main"]}>
+        <div className={styles["contact"]}>
+          <div className={styles["image-details"]}>
+            <Image
+              src={profilePic}
+              alt="Profile Picture"
+              objectFit="fill"
+            ></Image>
+          </div>
+          <div className={styles["contact-details"]}>
+            <Image
+              src={whatappsIcon}
+              alt="Phone"
+              width={IMAGE_WIDTH}
+              height={IMAGE_HEIGHT}
+            ></Image>
+            <Image
+              src={emailIcon}
+              alt="Email"
+              width={IMAGE_WIDTH}
+              height={IMAGE_HEIGHT}
+            ></Image>
+          </div>
         </div>
-        <div className={styles.rightHeader}>
-          <ul className={styles.mainNav}>
-            <li>
-              <Link href="/">
-                <Image
-                  src="/home.png"
-                  width={IMAGE_WIDTH}
-                  height={IMAGE_HEIGHT}
-                  alt="Home"
-                ></Image>
-              </Link>
-            </li>
-            <li>
-              <Image
-                src="/user.png"
-                width={IMAGE_WIDTH}
-                height={IMAGE_HEIGHT}
-                alt="User"
-              ></Image>
-              <Link href="/profile">Profile</Link>
-            </li>
-            <li>
-              <Image
-                src="/user.png"
-                width={IMAGE_WIDTH}
-                height={IMAGE_HEIGHT}
-                alt="User"
-              ></Image>
-              <Link href="/experience">Experience</Link>
-            </li>
-            <li>
-              <Image
-                src="/user.png"
-                width={IMAGE_WIDTH}
-                height={IMAGE_HEIGHT}
-                alt="User"
-              ></Image>
-              <Link href="/skills">Skills</Link>
-            </li>
-            <li>
-              <Image
-                src="/user.png"
-                width={IMAGE_WIDTH}
-                height={IMAGE_WIDTH}
-                alt="User"
-              ></Image>
-              <Link href="/education">Education</Link>
-            </li>
-          </ul>
-        </div>
-      </nav>
+        <div className={styles["header-buttons"]}>Buttons</div>
+      </div>
     </>
   );
 };

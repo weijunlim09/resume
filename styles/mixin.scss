@@ -1,0 +1,10 @@
+$red : indianred;
+$blue : lightblue;
+$purple: rgb(239, 158, 239);
+
+
+@mixin tablet {
+  @media only screen and (min-width: 600px) {
+    @content;
+  }
+}

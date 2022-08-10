@@ -1,7 +1,7 @@
-const Experience = () => {
+const Experience = ({ styling }) => {
   return (
     <>
-      <div>Experience</div>
+      <div className={styling}>Experience</div>
     </>
   );
 };
