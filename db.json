@@ -20,7 +20,7 @@
     },
     {
       "type": "LinkedIn",
-      "data": "https://www.linkedin.com/in/lim-wei-jun-090844221/",
+      "data": "https://www.linkedin.com/in/weijunlim09/",
       "urlPrefix": "http://img.icons8.com/",
       "iconType": "icon8",
       "urlEndpoint": "ios-filled/50/000000/linkedin-circled--v1.png",
@@ -46,27 +46,266 @@
       "show": true
     }
   ],
-  "introduction": [
-    {}
-  ],
+  "introduction": {
+    "type": "introduction",
+    "data": {
+      "name": "Lim Wei Jun",
+      "description": "Computer Science Fresh Graduate"
+    },
+    "isAnchor": false,
+    "show": true
+  },
+  "profile": {
+    "type": "profile",
+    "data": [
+      "Self-motivated and goal-oriented",
+      "Comp Sc graduate, looking for an",
+      "entry-level position as a web",
+      "developer/software engineer.",
+      "Have knowledge in HTML, CSS,",
+      "Javascript, SQL Server, Web API,",
+      "Java, Scala MVC, ASP.NET, JQuery,",
+      "Git, npm and Vue JS. Ability to fast",
+      "learn, adapt and apply new",
+      "technologies. Looking forward to",
+      "working in a fast-paced and teamdriven environment."
+    ],
+    "isAnchor": false,
+    "show": true
+  },
   "experience": [
     {}
   ],
   "extraDetails": [
-    {}
+    {
+      "type": "extraDetails",
+      "data": "Born in 21/07/2000",
+      "isAnchor": false,
+      "show": true
+    },
+    {
+      "type": "extraDetails",
+      "data": "Love hiking, exercising, and singing",
+      "isAnchor": false,
+      "show": true
+    },
+    {
+      "type": "extraDetails",
+      "data": "Currently learning the Korean language (Hangul)",
+      "isAnchor": false,
+      "show": true
+    },
+    {
+      "type": "extraDetails",
+      "data": "Resume last updated : 26/07/2022",
+      "isAnchor": false,
+      "show": true
+    }
   ],
   "skills": {
     "technical": [
-      {}
+      {
+        "type": "Technical Skills",
+        "data": "HTML",
+        "isAnchor": false,
+        "show": true,
+        "extra": null,
+        "confidence": 5
+      },
+      {
+        "type": "Technical Skills",
+        "data": "CSS (SCSS)",
+        "isAnchor": false,
+        "show": true,
+        "extra": null,
+        "confidence": 5
+      },
+      {
+        "type": "Technical Skills",
+        "data": "JavaScript (Vanilla, Vue JS)",
+        "isAnchor": false,
+        "show": true,
+        "extra": null,
+        "confidence": 5
+      },
+      {
+        "type": "Technical Skills",
+        "data": "SQL (SQL Server)",
+        "isAnchor": false,
+        "show": true,
+        "extra": null,
+        "confidence": 5
+      },
+      {
+        "type": "Technical Skills",
+        "data": "Java",
+        "isAnchor": false,
+        "show": true,
+        "extra": null,
+        "confidence": 5
+      },
+      {
+        "type": "Technical Skills",
+        "data": "Scala (Scala MVC using ScalaFX)",
+        "isAnchor": false,
+        "show": true,
+        "extra": null,
+        "confidence": 5
+      },
+      {
+        "type": "Technical Skills",
+        "data": "Web API (C# using ASP.NET)",
+        "isAnchor": false,
+        "show": true,
+        "extra": null,
+        "confidence": 5
+      },
+      {
+        "type": "Technical Skills",
+        "data": "Controller (C# using ASP .NET Core)",
+        "isAnchor": false,
+        "show": true,
+        "extra": null,
+        "confidence": 5
+      },
+      {
+        "type": "Technical Skills",
+        "data": "Version Control (Git)",
+        "isAnchor": false,
+        "show": true,
+        "extra": null,
+        "confidence": 5
+      },
+      {
+        "type": "Technical Skills",
+        "data": "DevOps (Microsoft DevOps)",
+        "isAnchor": false,
+        "show": true,
+        "extra": null,
+        "confidence": 5
+      },
+      {
+        "type": "Technical Skills",
+        "data": "Data Analytics (SAS Minor, Python)",
+        "isAnchor": false,
+        "show": true,
+        "extra": null,
+        "confidence": 5
+      }
     ],
     "selfLearn": [
-      {}
+      {
+        "type": "Self Learn Skills",
+        "data": "React JS",
+        "isAnchor": false,
+        "show": true,
+        "extra": null
+      },
+      {
+        "type": "Self Learn Skills",
+        "data": "Redux Toolkit",
+        "isAnchor": false,
+        "show": true,
+        "extra": null
+      },
+      {
+        "type": "Self Learn Skills",
+        "data": "Google Firebase (realtime database + deployment)",
+        "isAnchor": false,
+        "show": true,
+        "extra": null
+      },
+      {
+        "type": "Self Learn Skills",
+        "data": "Next JS (on-going)",
+        "isAnchor": false,
+        "show": true,
+        "extra": null
+      }
     ],
     "soft": [
-      {}
-    ],
-    "education": [
-      {}
+      {
+        "type": "Soft Skills",
+        "data": "Communicative",
+        "isAnchor": false,
+        "show": true,
+        "extra": null
+      },
+      {
+        "type": "Soft Skills",
+        "data": "Love learning new technologies and improving, no stagnation",
+        "isAnchor": false,
+        "show": true,
+        "extra": null
+      },
+      {
+        "type": "Soft Skills",
+        "data": "Love to work in a team",
+        "isAnchor": false,
+        "show": true,
+        "extra": null
+      },
+      {
+        "type": "Soft Skills",
+        "data": "Can speak 4 languages and one dialect fluently (English, Mandarin, Bahasa, Hokkien)",
+        "isAnchor": false,
+        "show": true,
+        "extra": null
+      }
     ]
-  }
+  },
+  "education": [
+    {
+      "type": "Secondary Education",
+      "data": {
+        "schoolName": "SMK METHODIST (ACS) KLANG",
+        "dateStart": "JAN 2013",
+        "dateEnd": "DEC 2017",
+        "academic": "SPM",
+        "status": "Completion",
+        "result": [
+          "1 A+",
+          "2 A",
+          "1 A-",
+          "4 B+",
+          "1 C+"
+        ]
+      },
+      "isAnchor": false,
+      "show": true,
+      "extra": null
+    },
+    {
+      "type": "Tertiary Education",
+      "data": {
+        "schoolName": "SUNWAY COLLEGE",
+        "dateStart": "MARCH 2018",
+        "dateEnd": "MARCH 2019",
+        "academic": "Foundation in Arts",
+        "status": "Completion",
+        "result": [
+          3.48
+        ]
+      },
+      "isAnchor": false,
+      "show": true,
+      "extra": null
+    },
+    {
+      "type": "Tertiary Education",
+      "data": {
+        "schoolName": "SUNWAY UNIVERSITY",
+        "dateStart": "MARCH 2019",
+        "dateEnd": "JUNE 2022",
+        "academic": "BSc (Hons) in Computer Science",
+        "status": "Completion",
+        "result": [
+          73.35
+        ]
+      },
+      "isAnchor": false,
+      "show": true,
+      "extra": null
+    }
+  ]
 }
