@@ -1,0 +1,72 @@
+{
+  "contact": [
+    {
+      "type": "SchoolEmail",
+      "data": "18034223@imail.sunway.edu.my",
+      "urlPrefix": "http://img.icons8.com/",
+      "iconType": "icon8",
+      "urlEndpoint": "ios-filled/50/000000/mail.png",
+      "isAnchor": false,
+      "show": true
+    },
+    {
+      "type": "PersonalEmail",
+      "data": "weijunlim.3019lwj@gmail.com",
+      "urlPrefix": "http://img.icons8.com/",
+      "iconType": "icon8",
+      "urlEndpoint": "ios-filled/50/000000/mail.png",
+      "isAnchor": false,
+      "show": false
+    },
+    {
+      "type": "LinkedIn",
+      "data": "https://www.linkedin.com/in/lim-wei-jun-090844221/",
+      "urlPrefix": "http://img.icons8.com/",
+      "iconType": "icon8",
+      "urlEndpoint": "ios-filled/50/000000/linkedin-circled--v1.png",
+      "isAnchor": true,
+      "show": true
+    },
+    {
+      "type": "Github",
+      "data": "https://github.com/weijunlim09",
+      "urlPrefix": "http://img.icons8.com/",
+      "iconType": "icon8",
+      "urlEndpoint": "ios-glyphs/50/000000/github.png",
+      "isAnchor": true,
+      "show": true
+    },
+    {
+      "type": "Whatapps",
+      "data": "+601121177805",
+      "urlPrefix": "http://img.icons8.com/",
+      "iconType": "icon8",
+      "urlEndpoint": "ios-glyphs/30/000000/whatsapp.png",
+      "isAnchor": false,
+      "show": true
+    }
+  ],
+  "introduction": [
+    {}
+  ],
+  "experience": [
+    {}
+  ],
+  "extraDetails": [
+    {}
+  ],
+  "skills": {
+    "technical": [
+      {}
+    ],
+    "selfLearn": [
+      {}
+    ],
+    "soft": [
+      {}
+    ],
+    "education": [
+      {}
+    ]
+  }
+}
