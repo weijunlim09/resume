@@ -1,7 +1,9 @@
+import styles from "../styles/Profile.module.scss";
+
 const Profile = () => {
   return (
     <>
-      <h1>Profile</h1>
+      <div className={styles["profile-main"]}>Profile</div>
     </>
   );
 };

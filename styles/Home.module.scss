@@ -1,0 +1,85 @@
+@use './mixin.scss' as mixin;
+@import "global.module.scss";
+
+.home-main {
+  @extend .global-body;
+  display: flex;
+
+  @include mixin.tablet {
+    flex-direction: column;
+  }
+
+  > * {
+    flex: 1;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+
+    :not(:first-child) {
+      margin-top: 50px;
+    }
+
+  }
+  
+
+  > .left-home {
+    
+    
+  }
+  
+  > .right-home {
+  }
+}
+
+// .home-main {
+//   @extend .global-body;
+//   background-color: red;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   // justify-content: space-between;
+
+//   > * {
+//     width: fit-content;
+//     height: fit-content;
+//     margin-bottom: 20px;
+//   }
+
+//   > .profile {
+//     display: flex;
+//     flex-direction: column;
+//     text-align: center;
+//     font-weight: bold;
+
+//     > span {
+//       padding: 5px;
+//       border: 1px solid black;
+//       border-radius: 10px;
+//     }
+//   }
+
+//   > .contact {
+//     background-color: white;
+//     padding: 5px;
+//     border: 2px solid black;
+//     border-radius : 10px;
+
+//     > .contact-individual {
+//       background-color: yellow;
+//       display: flex;
+//       justify-content: flex-start;
+//       align-items: center;
+      
+//       > span, a {
+//         margin-left: 10px;
+//       }
+//     }
+//   }
+
+//   > .self-intro {
+//     background-color: white;
+//   }
+// }

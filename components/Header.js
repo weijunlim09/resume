@@ -1,41 +1,82 @@
 import Image from "next/image";
+import Link from "next/link";
+import { useRef } from "react";
+import Button from "../components/Button";
+import useFetch from "../hooks/useFetch";
 import profilePic from "../public/Header/lwj.png";
 import styles from "../styles/Header.module.scss";
 
 const Header = () => {
-  const IMAGE_HEIGHT = "25";
-  const IMAGE_WIDTH = "25";
-  const icon8UrlPrefix = "http://img.icons8.com/";
-
-  const whatappsIcon = `${icon8UrlPrefix}/ios-glyphs/30/000000/whatsapp.png`;
-  const emailIcon = `${icon8UrlPrefix}/ios-filled/50/000000/mail.png`;
+  const customButtonClicked = () => {
+    console.log("refreshclicked");
+  };
   return (
     <>
       <div className={styles["header-main"]}>
-        <div className={styles["contact"]}>
-          <div className={styles["image-details"]}>
-            <Image
-              src={profilePic}
-              alt="Profile Picture"
-              objectFit="fill"
-            ></Image>
+        <div className={styles["logo"]}></div>
+
+        {/* <div style={{ display: "none" }}>Empty</div> */}
+        {/* might add something ^ in the future */}
+        <div className={styles["buttons"]}>
+          <div className={styles["left-buttons"]}>
+            <ul>
+              <li>
+                <Link href="/profile" passHref>
+                  <Button
+                    isLink="true"
+                    imgSrc="https://img.icons8.com/ios-glyphs/30/000000/user--v1.png"
+                  ></Button>
+                </Link>
+              </li>
+              <li>
+                <Link href="/experience" passHref>
+                  <Button
+                    isLink="true"
+                    imgSrc="https://img.icons8.com/ios-glyphs/30/000000/briefcase.png"
+                  ></Button>
+                </Link>
+              </li>
+
+              <li>
+                <Link href="/education" passHref>
+                  <Button
+                    isLink="true"
+                    imgSrc="https://img.icons8.com/ios-glyphs/30/000000/school-building.png"
+                  ></Button>
+                </Link>
+              </li>
+              <li>
+                <Link href="/skills" passHref>
+                  <Button
+                    isLink="true"
+                    imgSrc="https://img.icons8.com/ios-glyphs/30/000000/development-skill.png"
+                  ></Button>
+                </Link>
+              </li>
+            </ul>
           </div>
-          <div className={styles["contact-details"]}>
-            <Image
-              src={whatappsIcon}
-              alt="Phone"
-              width={IMAGE_WIDTH}
-              height={IMAGE_HEIGHT}
-            ></Image>
-            <Image
-              src={emailIcon}
-              alt="Email"
-              width={IMAGE_WIDTH}
-              height={IMAGE_HEIGHT}
-            ></Image>
+          <div className={styles["right-buttons"]}>
+            <ul>
+              <li>
+                <Link href="/" passHref>
+                  <Button
+                    isLink="true"
+                    isHome="true"
+                    imgSrc="https://img.icons8.com/material-outlined/24/000000/home--v2.png"
+                  ></Button>
+                </Link>
+              </li>
+              <li>
+                <Button
+                  onClick={customButtonClicked}
+                  customTitle="Refresh"
+                  imgSrc="https://img.icons8.com/ios-glyphs/30/000000/refresh--v1.png"
+                ></Button>
+              </li>
+            </ul>
           </div>
         </div>
-        <div className={styles["header-buttons"]}>Buttons</div>
+        <div className={styles["current-location"]}>cur location</div>
       </div>
     </>
   );

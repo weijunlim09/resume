@@ -8,7 +8,7 @@ const nextConfig = {
     includePaths: [path.join(__dirname, "styles")],
   },
   images: {
-    domains: ["img.icons8.com"],
+    domains: ["img.icons8.com", "picsum.photos"],
   },
 };
 

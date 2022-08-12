@@ -1,7 +1,9 @@
-const Education = () => {
+import styles from "../styles/Education.module.scss";
+
+const Education = ({ styling }) => {
   return (
     <>
-      <h1>Education</h1>
+      <div className={styles["education-main"]}>Education</div>
     </>
   );
 };

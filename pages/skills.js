@@ -1,7 +1,9 @@
+import styles from "../styles/Skills.module.scss";
+
 const Skills = () => {
   return (
     <>
-      <h1>Skills</h1>
+      <div className={styles["skills-main"]}>Skills</div>
     </>
   );
 };

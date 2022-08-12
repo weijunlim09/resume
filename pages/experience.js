@@ -1,7 +1,9 @@
-const Experience = ({ styling }) => {
+import styles from "../styles/Experience.module.scss";
+
+const Experience = () => {
   return (
     <>
-      <div className={styling}>Experience</div>
+      <div className={styles["experience-main"]}>Experience</div>
     </>
   );
 };
