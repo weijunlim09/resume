@@ -5,7 +5,9 @@ const BoxContainer = (props) => {
   return (
     <>
       <div className={styles["box-container-main"]}>
-        <div>{headerTitle}</div>
+        <div className={styles["box-container-title"]}>
+          <span>{headerTitle}</span>
+        </div>
         <div {...props}></div>
       </div>
     </>

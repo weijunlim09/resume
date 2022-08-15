@@ -3,6 +3,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { useState } from "react";
 import BoxContainer from "../components/BoxContainer";
+import SubBoxContainer from "../components/SubBoxContainer";
 import profilePic from "../public/Header/lwj.png";
 import {
   useAddContactMutation,
@@ -12,95 +13,280 @@ import {
 import styles from "../styles/Home.module.scss";
 
 // default page
-export default function Home({ contactData }) {
+export default function Home({ data }) {
+  const {
+    contactData,
+    selfIntroData,
+    profileData,
+    promoterData,
+    softwareDeveloperData,
+    extraDetailsData,
+    technicalSkillsData,
+    softSkillsData,
+    selfLearnSkillsData,
+    secondaryEduData,
+    tertiaryEduData,
+  } = data;
+
+  //#region Sorting Work Experience
+
+  const promoterExperiences = promoterData[0]["data"];
+  const softwareDeveloperExperiences = softwareDeveloperData[0]["data"];
+  const experiences = [...promoterExperiences, ...softwareDeveloperExperiences];
+
+  const sortedExperiences = experiences.sort((current, next) => {
+    const nextDate = new Date(next["startDate"]);
+    const currentDate = new Date(current["startDate"]);
+    return nextDate - currentDate;
+  });
+
+  console.log(sortedExperiences);
+  //#endregion
+
   const IMAGE_HEIGHT = "30";
   const IMAGE_WIDTH = "30";
 
-  const { data, error, isLoading, isFetching, isSuccess, refetch } =
-    useContactsQuery();
-  const { data: whatappsData } = useContactTypeQuery();
-  const [addContact] = useAddContactMutation();
+  //#region RTK Query
+  // const { data, error, isLoading, isFetching, isSuccess, refetch } =
+  //   useContactsQuery();
+  // const { data: whatappsData } = useContactTypeQuery();
+  // const [addContact] = useAddContactMutation();
 
-  console.log(data);
+  //#endregion
 
   return (
-    <></>
-    // <div className={styles["home-main"]}>
-    //   <div className={styles["left-home"]}>
-    //     <BoxContainer title="Contact">
-    //       <div className={styles["profile"]}>
-    //         <Image
-    //           src={profilePic}
-    //           alt="Profile Picture"
-    //           width="200"
-    //           height="200"
-    //           objectFit="contain"
-    //         ></Image>
-    //         <div className={styles["profile-details"]}>
-    //           <span>Lim Wei Jun</span>
-    //           <span>Computer Science Fresh Graduate</span>
-    //           <div className={styles["contact-details"]}>
-    //             {contactData &&
-    //               contactData.map((data, index) => {
-    //                 return (
-    //                   <div key={index} className={styles["contact-individual"]}>
-    //                     {data["show"] && (
-    //                       <Image
-    //                         src={`${data["urlPrefix"]}${data["urlEndpoint"]}`}
-    //                         alt={data["type"]}
-    //                         width={IMAGE_WIDTH}
-    //                         height={IMAGE_HEIGHT}
-    //                         objectFit="contain"
-    //                       ></Image>
-    //                     )}
-    //                     {data["show"] &&
-    //                       (data["isAnchor"] ? (
-    //                         <a
-    //                           href={data["data"]}
-    //                           target="_blank"
-    //                           rel="noopener noreferrer"
-    //                         >
-    //                           {data["type"]}
-    //                         </a>
-    //                       ) : (
-    //                         <span>{data["data"]}</span>
-    //                       ))}
-    //                   </div>
-    //                 );
-    //               })}
-    //           </div>
-    //         </div>
-    //       </div>
-    //     </BoxContainer>
-    //   </div>
-    //   <div className={styles["right-home"]}>
-    //     <BoxContainer title="Contact"></BoxContainer>
-    //   </div>
-    // </div>
+    <div className={styles["home-main"]}>
+      <div className={styles["left-home"]}>
+        <BoxContainer title="Contact">
+          <div className={styles["profile"]}>
+            <Image
+              src={profilePic}
+              alt="Profile Picture"
+              width="200"
+              height="200"
+              objectFit="contain"
+            ></Image>
+            <div className={styles["profile-details"]}>
+              {selfIntroData?.["show"] && (
+                <span>{selfIntroData?.["data"]["name"]}</span>
+              )}
+              {selfIntroData?.["show"] && (
+                <span>{selfIntroData?.["data"]["description"]}</span>
+              )}
+
+              <div className={styles["contact-details"]}>
+                {contactData &&
+                  contactData.map((data, index) => {
+                    return (
+                      <div key={index} className={styles["contact-individual"]}>
+                        {data["show"] && (
+                          <Image
+                            src={`${data["urlPrefix"]}${data["urlEndpoint"]}`}
+                            alt={data["type"]}
+                            width={IMAGE_WIDTH}
+                            height={IMAGE_HEIGHT}
+                            objectFit="contain"
+                          ></Image>
+                        )}
+                        {data["show"] &&
+                          (data["isAnchor"] ? (
+                            <a
+                              href={data["data"]}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              {data["type"]}
+                            </a>
+                          ) : (
+                            <span>{data["data"]}</span>
+                          ))}
+                      </div>
+                    );
+                  })}
+              </div>
+            </div>
+          </div>
+        </BoxContainer>
+        <BoxContainer title="Profile">
+          <div className={styles["short-profile"]}>
+            {profileData?.["show"] && (
+              <div
+                dangerouslySetInnerHTML={{ __html: profileData?.["data"] }}
+              ></div>
+            )}
+          </div>
+        </BoxContainer>
+
+        <BoxContainer title="Soft Skills">
+          <div className={styles["ul-li-details"]}>
+            <ul>
+              {softSkillsData?.[0]["data"].map((skill, index) => {
+                return <li key={index}>{skill["show"] && skill["data"]}</li>;
+              })}
+            </ul>
+          </div>
+        </BoxContainer>
+
+        <BoxContainer title="Extra Details">
+          <div className={styles["ul-li-details"]}>
+            <ul>
+              {extraDetailsData?.map((data, index) => {
+                return <li key={index}>{data["show"] && data["data"]}</li>;
+              })}
+            </ul>
+          </div>
+        </BoxContainer>
+      </div>
+      <div className={styles["right-home"]}>
+        <BoxContainer title="Work Experience">
+          {sortedExperiences?.map((experience, index) => {
+            return (
+              <SubBoxContainer title={experience["title"]} key={index}>
+                <div className={styles["experience"]}>
+                  <div className={styles["label"]}>Location</div>
+                  <div className={styles["value"]}>
+                    <span>{experience["location"]}</span>
+                  </div>
+                </div>
+                <div className={styles["experience"]}>
+                  <div className={styles["label"]}>City</div>
+                  <div className={styles["value"]}>
+                    <span>{experience["city"]}</span>
+                  </div>
+                </div>
+                <div className={styles["experience"]}>
+                  <div className={styles["label"]}>Company</div>
+                  <div className={styles["value"]}>{experience["company"]}</div>
+                </div>
+                <div className={styles["experience"]}>
+                  <div className={styles["label"]}>Products</div>
+                  <div className={styles["value"]}>
+                    {experience["products"].map((product, i) => {
+                      return (
+                        <ul key={i}>
+                          <li>
+                            <div>
+                              <span>{product}</span>
+                            </div>
+                          </li>
+                        </ul>
+                      );
+                    })}
+                  </div>
+                </div>
+                <div className={styles["experience"]}>
+                  <div className={styles["label"]}>Desription(s)</div>
+                  <div className={styles["value"]}>
+                    {experience["description"].map((description, ind) => {
+                      return (
+                        <ul key={ind}>
+                          <li>
+                            <div>
+                              <span>{description}</span>
+                            </div>
+                          </li>
+                        </ul>
+                      );
+                    })}
+                  </div>
+                </div>
+                {experience["techLibaryFrameworkStacks"] && (
+                  <div className={styles["experience"]}>
+                    <div className={styles["label"]}>Tech/Libary/Framework</div>
+                    <div className={styles["value"]}>
+                      {experience["techLibaryFrameworkStacks"].map(
+                        (tech, count) => {
+                          return (
+                            <ul key={count}>
+                              <li>
+                                <div>
+                                  <Image
+                                    src={`${tech["urlPrefix"]}${tech["urlEndpoint"]}`}
+                                    width="20"
+                                    height="20"
+                                    objectFit="fill"
+                                    alt={tech["name"]}
+                                  ></Image>
+                                  <span>{tech["name"]}</span>
+                                </div>
+                              </li>
+                            </ul>
+                          );
+                        }
+                      )}
+                    </div>
+                  </div>
+                )}
+                <div className={styles["experience"]}>
+                  <div className={styles["label"]}>Start Date</div>
+                  <div className={styles["value"]}>formatDateHook</div>
+                </div>
+                <div className={styles["experience"]}>
+                  <div className={styles["label"]}>End Date</div>
+                  <div className={styles["value"]}>formatDateHook</div>
+                </div>
+              </SubBoxContainer>
+            );
+          })}
+        </BoxContainer>
+      </div>
+    </div>
   );
 }
 
-// export async function getStaticProps() {
-//   // we cannot use React hooks in getstaticprops
-//   // we cannot use getStaticProps in Components - only applicable with pages
+export async function getStaticProps() {
+  // we cannot use React hooks in getstaticprops
+  // we cannot use getStaticProps in Components - only applicable to pages
 
-//   // let contactResponse = await axios.get(`${process.env.API_URL}contact`);
-//   // let contactData = await contactResponse.data;
-//   if (!contactData) {
-//     return {
-//       notFound: true, //  return to 404 page, could not see in devs, only production
+  // facade pattern
+  async function getAxios(endpoints, params = {}) {
+    const queryString = Object.entries(params)
+      .map((param) => {
+        return `${param[0]}=${param[1]}`;
+      })
+      .join("&");
+    const response = await axios.get(
+      `${process.env.API_URL}${endpoints}${
+        Object.keys(params).length !== 0 ? `?${queryString}` : ""
+      }`
+    );
+    const data = await response.data;
 
-//       // redirect: {
-//       //   destination: '/',
-//       //   permanent: false,
-//       //   statusCode: 301
-//       // },
-//     };
-//   }
-//   return {
-//     props: {
-//       // contactData,
-//     },
-//     revalidate: 10,
-//   };
-// }
+    return data;
+  }
+
+  const data = {
+    contactData: await getAxios("contact"),
+    selfIntroData: await getAxios("introduction"),
+    profileData: await getAxios("profile"),
+    promoterData: await getAxios("experience", {
+      type: "promoter",
+    }),
+    softwareDeveloperData: await getAxios("experience", {
+      type: "software developer",
+    }),
+    extraDetailsData: await getAxios("extraDetails"),
+    technicalSkillsData: await getAxios("skills", {
+      type: "techinical",
+    }),
+    softSkillsData: await getAxios("skills", {
+      type: "soft",
+    }),
+    selfLearnSkillsData: await getAxios("skills", {
+      type: "selfLearn",
+    }),
+    secondaryEduData: await getAxios("education", {
+      type: "secondary",
+    }),
+    tertiaryEduData: await getAxios("education", {
+      type: "tertiary",
+    }),
+  };
+
+  return {
+    props: {
+      data,
+    },
+    revalidate: 10,
+  };
+}

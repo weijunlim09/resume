@@ -2,7 +2,7 @@
 
 
 .header-main {
-  height: 100%;
+  height: fit-content;
   width: 100%;
   background-image : radial-gradient(rgb(33, 32, 32), rgb(101, 101, 98), rgb(216, 216, 216) );
   display: flex;
@@ -43,13 +43,13 @@
       }
     }
 
-    // > .left-buttons {
+    > .left-buttons {
 
-    // }
+    }
 
-    // > .right-buttons {
+    > .right-buttons {
 
-    // }
+    }
     
     
   }

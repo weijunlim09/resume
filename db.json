@@ -57,24 +57,137 @@
   },
   "profile": {
     "type": "profile",
-    "data": [
-      "Self-motivated and goal-oriented",
-      "Comp Sc graduate, looking for an",
-      "entry-level position as a web",
-      "developer/software engineer.",
-      "Have knowledge in HTML, CSS,",
-      "Javascript, SQL Server, Web API,",
-      "Java, Scala MVC, ASP.NET, JQuery,",
-      "Git, npm and Vue JS. Ability to fast",
-      "learn, adapt and apply new",
-      "technologies. Looking forward to",
-      "working in a fast-paced and teamdriven environment."
-    ],
+    "data": "Self-motivated and goal-oriented Comp Sc graduate looking for an entry-level web developer/software engineer position. Have knowledge of <span>HTML, CSS, Javascript (VueJS/React), Microsoft SQL Server, Web API, Java, Scala MVC, ASP.NET, JQuery, Git and npm</span>. Ability to fast learn, adapt and apply new technologies. Looking forward to working in a fast-paced and team-driven environment.",
     "isAnchor": false,
     "show": true
   },
   "experience": [
-    {}
+    {
+      "type": "promoter",
+      "data": [
+        {
+          "title": "Promoter",
+          "location": "Harvey Norman, Midvalley",
+          "city": "Kuala Lumpur",
+          "company": "Jaybird, Logitech",
+          "products": [
+            "Jaybird Tarah",
+            "Jaybird X4"
+          ],
+          "description": [
+            "Promoted product launching of Jaybird X4 and Tarah.",
+            "Listened to the needs of customers and presented product demo (solution) to customers.",
+            "Hit sales target required for most days.",
+            "Report daily sales update to supervisor. "
+          ],
+          "startDate": "01/11/2018",
+          "endDate": "01/12/2018",
+          "isAnchor": false,
+          "show": true,
+          "extra": null
+        },
+        {
+          "title": "Promoter",
+          "location": "Giant Hypermarket, Shah Alam",
+          "city": "Selangor",
+          "company": "Nestle",
+          "products": [
+            "Lipton",
+            "Nescafe",
+            "Milo"
+          ],
+          "description": [
+            "Promoted newly released F&B products.",
+            "Giving out samples and sharing knowledge of products.",
+            "Taken care of booth during the promotion",
+            "Report daily sales to supervisor"
+          ],
+          "startDate": "01/11/2019",
+          "endDate": "01/12/2019",
+          "isAnchor": false,
+          "show": true,
+          "extra": null
+        }
+      ]
+    },
+    {
+      "type": "software developer",
+      "data": [
+        {
+          "title": "Software Developer Intern",
+          "location": "Glenmarie, Shah Alam",
+          "city": "Selangor",
+          "company": "Digital Systems Malaysia",
+          "products": [
+            "Inhouse ERP"
+          ],
+          "description": [
+            "Develop modules for DSM's ERP that provides IT solutions for Logistic company in Malaysia.",
+            "Have been working as a front-end developer for 5 months and a backend developer for a month.",
+            "Have experience in end-to-end project development from writing stored procedures, building APIs, UI/UX design, creating pages/components, creating controller, building logic, testing, deploy to production and maintenance.",
+            "Received guidance and support from peers and senior software engineers, honed technical skills in writing custom, scalable, extensible code.",
+            "Recommended changes in code logic and design, receiving recognition from supervisor for ideas and implementations."
+          ],
+          "techLibaryFrameworkStacks": [
+            {
+              "name": "Vue JS",
+              "urlPrefix": "http://img.icons8.com/",
+              "urlEndpoint": "external-tal-revivo-shadow-tal-revivo/24/000000/external-vuejs-an-open-source-javascript-framework-for-building-user-interfaces-and-single-page-applications-logo-shadow-tal-revivo.png"
+            },
+            {
+              "name": "Vuex",
+              "urlPrefix": "http://img.icons8.com/",
+              "urlEndpoint": "external-tal-revivo-shadow-tal-revivo/24/000000/external-vuejs-an-open-source-javascript-framework-for-building-user-interfaces-and-single-page-applications-logo-shadow-tal-revivo.png"
+            },
+            {
+              "name": "Axios",
+              "urlPrefix": "http://img.icons8.com/",
+              "urlEndpoint": "material-outlined/24/000000/api-settings.png"
+            },
+            {
+              "name": "SCSS",
+              "urlPrefix": "http://img.icons8.com/",
+              "urlEndpoint": "external-creatype-outline-colourcreatype/64/000000/external-document-file-extension-web-format-file-creatype-outline-colourcreatype-60.png"
+            },
+            {
+              "name": "SQL Server",
+              "urlPrefix": "http://img.icons8.com/",
+              "urlEndpoint": "ios/50/000000/servers-group--v2.png"
+            },
+            {
+              "name": "ASP.NET Core",
+              "urlPrefix": "http://img.icons8.com/",
+              "urlEndpoint": "external-tal-revivo-bold-tal-revivo/24/000000/external-net-or-dot-net-a-software-framework-developed-by-microsoft-logo-bold-tal-revivo.png"
+            },
+            {
+              "name": ".NET Framework",
+              "urlPrefix": "http://img.icons8.com/",
+              "urlEndpoint": "external-tal-revivo-bold-tal-revivo/24/000000/external-net-or-dot-net-a-software-framework-developed-by-microsoft-logo-bold-tal-revivo.png"
+            },
+            {
+              "name": "Figma",
+              "urlPrefix": "http://img.icons8.com/",
+              "urlEndpoint": "color/48/000000/figma--v1.png"
+            },
+            {
+              "name": "Git",
+              "urlPrefix": "http://img.icons8.com/",
+              "urlEndpoint": "https://img.icons8.com/color/48/000000/git.png"
+            },
+            {
+              "name": "Azure Dev Ops",
+              "urlPrefix": "http://img.icons8.com/",
+              "urlEndpoint": "color/48/000000/azure-1.png"
+            }
+          ],
+          "startDate": "03/01/2022",
+          "endDate": "04/07/2022",
+          "isAnchor": false,
+          "show": true,
+          "extra": null
+        }
+      ]
+    }
   ],
   "extraDetails": [
     {
@@ -102,161 +215,184 @@
       "show": true
     }
   ],
-  "skills": {
-    "technical": [
-      {
-        "type": "Technical Skills",
-        "data": "HTML",
-        "isAnchor": false,
-        "show": true,
-        "extra": null,
-        "confidence": 5
-      },
-      {
-        "type": "Technical Skills",
-        "data": "CSS (SCSS)",
-        "isAnchor": false,
-        "show": true,
-        "extra": null,
-        "confidence": 5
-      },
-      {
-        "type": "Technical Skills",
-        "data": "JavaScript (Vanilla, Vue JS)",
-        "isAnchor": false,
-        "show": true,
-        "extra": null,
-        "confidence": 5
-      },
-      {
-        "type": "Technical Skills",
-        "data": "SQL (SQL Server)",
-        "isAnchor": false,
-        "show": true,
-        "extra": null,
-        "confidence": 5
-      },
-      {
-        "type": "Technical Skills",
-        "data": "Java",
-        "isAnchor": false,
-        "show": true,
-        "extra": null,
-        "confidence": 5
-      },
-      {
-        "type": "Technical Skills",
-        "data": "Scala (Scala MVC using ScalaFX)",
-        "isAnchor": false,
-        "show": true,
-        "extra": null,
-        "confidence": 5
-      },
-      {
-        "type": "Technical Skills",
-        "data": "Web API (C# using ASP.NET)",
-        "isAnchor": false,
-        "show": true,
-        "extra": null,
-        "confidence": 5
-      },
-      {
-        "type": "Technical Skills",
-        "data": "Controller (C# using ASP .NET Core)",
-        "isAnchor": false,
-        "show": true,
-        "extra": null,
-        "confidence": 5
-      },
-      {
-        "type": "Technical Skills",
-        "data": "Version Control (Git)",
-        "isAnchor": false,
-        "show": true,
-        "extra": null,
-        "confidence": 5
-      },
-      {
-        "type": "Technical Skills",
-        "data": "DevOps (Microsoft DevOps)",
-        "isAnchor": false,
-        "show": true,
-        "extra": null,
-        "confidence": 5
-      },
-      {
-        "type": "Technical Skills",
-        "data": "Data Analytics (SAS Minor, Python)",
-        "isAnchor": false,
-        "show": true,
-        "extra": null,
-        "confidence": 5
-      }
-    ],
-    "selfLearn": [
-      {
-        "type": "Self Learn Skills",
-        "data": "React JS",
-        "isAnchor": false,
-        "show": true,
-        "extra": null
-      },
-      {
-        "type": "Self Learn Skills",
-        "data": "Redux Toolkit",
-        "isAnchor": false,
-        "show": true,
-        "extra": null
-      },
-      {
-        "type": "Self Learn Skills",
-        "data": "Google Firebase (realtime database + deployment)",
-        "isAnchor": false,
-        "show": true,
-        "extra": null
-      },
-      {
-        "type": "Self Learn Skills",
-        "data": "Next JS (on-going)",
-        "isAnchor": false,
-        "show": true,
-        "extra": null
-      }
-    ],
-    "soft": [
-      {
-        "type": "Soft Skills",
-        "data": "Communicative",
-        "isAnchor": false,
-        "show": true,
-        "extra": null
-      },
-      {
-        "type": "Soft Skills",
-        "data": "Love learning new technologies and improving, no stagnation",
-        "isAnchor": false,
-        "show": true,
-        "extra": null
-      },
-      {
-        "type": "Soft Skills",
-        "data": "Love to work in a team",
-        "isAnchor": false,
-        "show": true,
-        "extra": null
-      },
-      {
-        "type": "Soft Skills",
-        "data": "Can speak 4 languages and one dialect fluently (English, Mandarin, Bahasa, Hokkien)",
-        "isAnchor": false,
-        "show": true,
-        "extra": null
-      }
-    ]
-  },
+  "skills": [
+    {
+      "type": "technical",
+      "data": [
+        {
+          "type": "Technical Skills",
+          "data": "HTML",
+          "isAnchor": false,
+          "show": true,
+          "extra": null,
+          "confidence": 5
+        },
+        {
+          "type": "Technical Skills",
+          "data": "CSS (SCSS)",
+          "isAnchor": false,
+          "show": true,
+          "extra": null,
+          "confidence": 5
+        },
+        {
+          "type": "Technical Skills",
+          "data": "JavaScript (Vanilla, Vue JS)",
+          "isAnchor": false,
+          "show": true,
+          "extra": null,
+          "confidence": 5
+        },
+        {
+          "type": "Technical Skills",
+          "data": "SQL (SQL Server)",
+          "isAnchor": false,
+          "show": true,
+          "extra": null,
+          "confidence": 5
+        },
+        {
+          "type": "Technical Skills",
+          "data": "Java",
+          "isAnchor": false,
+          "show": true,
+          "extra": null,
+          "confidence": 5
+        },
+        {
+          "type": "Technical Skills",
+          "data": "Scala (Scala MVC using ScalaFX)",
+          "isAnchor": false,
+          "show": true,
+          "extra": null,
+          "confidence": 5
+        },
+        {
+          "type": "Technical Skills",
+          "data": "Web API (C# using ASP.NET)",
+          "isAnchor": false,
+          "show": true,
+          "extra": null,
+          "confidence": 5
+        },
+        {
+          "type": "Technical Skills",
+          "data": "Controller (C# using ASP .NET Core)",
+          "isAnchor": false,
+          "show": true,
+          "extra": null,
+          "confidence": 5
+        },
+        {
+          "type": "Technical Skills",
+          "data": "Version Control (Git)",
+          "isAnchor": false,
+          "show": true,
+          "extra": null,
+          "confidence": 5
+        },
+        {
+          "type": "Technical Skills",
+          "data": "DevOps (Microsoft DevOps)",
+          "isAnchor": false,
+          "show": true,
+          "extra": null,
+          "confidence": 5
+        },
+        {
+          "type": "Technical Skills",
+          "data": "Data Analytics (SAS Minor, Python)",
+          "isAnchor": false,
+          "show": true,
+          "extra": null,
+          "confidence": 5
+        }
+      ]
+    },
+    {
+      "type": "soft",
+      "data": [
+        {
+          "type": "Soft Skills",
+          "data": "Communicative",
+          "isAnchor": false,
+          "show": true,
+          "extra": null
+        },
+        {
+          "type": "Soft Skills",
+          "data": "Love learning new technologies and improving, no stagnation",
+          "isAnchor": false,
+          "show": true,
+          "extra": null
+        },
+        {
+          "type": "Soft Skills",
+          "data": "Love to work in a team",
+          "isAnchor": false,
+          "show": true,
+          "extra": null
+        },
+        {
+          "type": "Soft Skills",
+          "data": "Can speak 4 languages and one dialect fluently (English, Mandarin, Bahasa, Hokkien)",
+          "isAnchor": false,
+          "show": true,
+          "extra": null
+        }
+      ]
+    },
+    {
+      "type": "selfLearn",
+      "data": [
+        {
+          "type": "Self Learn Skills",
+          "data": "React JS",
+          "isAnchor": false,
+          "show": true,
+          "extra": null
+        },
+        {
+          "type": "Self Learn Skills",
+          "data": "Redux Toolkit",
+          "isAnchor": false,
+          "show": true,
+          "extra": null
+        },
+        {
+          "type": "Self Learn Skills",
+          "data": "Google Firebase (realtime database + deployment)",
+          "isAnchor": false,
+          "show": true,
+          "extra": null
+        },
+        {
+          "type": "Self Learn Skills",
+          "data": "Next JS (on-going)",
+          "isAnchor": false,
+          "show": true,
+          "extra": null
+        }
+      ]
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "text": "'First'"
+    },
+    {
+      "id": 2,
+      "text": "'Second'"
+    },
+    {
+      "id": 3,
+      "text": "'Third"
+    }
+  ],
   "education": [
     {
-      "type": "Secondary Education",
+      "type": "secondary",
       "data": {
         "schoolName": "SMK METHODIST (ACS) KLANG",
         "dateStart": "JAN 2013",
@@ -276,7 +412,7 @@
       "extra": null
     },
     {
-      "type": "Tertiary Education",
+      "type": "tertiary",
       "data": {
         "schoolName": "SUNWAY COLLEGE",
         "dateStart": "MARCH 2018",
@@ -292,7 +428,7 @@
       "extra": null
     },
     {
-      "type": "Tertiary Education",
+      "type": "tertiary",
       "data": {
         "schoolName": "SUNWAY UNIVERSITY",
         "dateStart": "MARCH 2019",

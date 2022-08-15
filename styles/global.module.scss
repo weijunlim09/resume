@@ -1,7 +1,8 @@
 .global-main {
-  background-color: purple;
+  background-color: white;
   width: 100%;
   height: fit-content;
+  // height: 100%;
   display: flex;
   flex-direction: column;
 }
@@ -10,5 +11,6 @@
   // overflow: auto;
   width: 100%;
   height: 100%;
+  margin-bottom: 50px;
   // background-color: green;
 }

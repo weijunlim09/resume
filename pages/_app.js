@@ -16,7 +16,6 @@ function MyApp({ Component, pageProps }) {
   if (Component.getLayout) {
     return Component.getLayout(<Component {...pageProps}></Component>);
   }
-  console.log(store);
   // useContext, API is not used due to we are using getStaticProps function
   return (
     <React.StrictMode>
