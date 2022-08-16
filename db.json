@@ -66,6 +66,7 @@
       "type": "promoter",
       "data": [
         {
+          "id": "p1",
           "title": "Promoter",
           "location": "Harvey Norman, Midvalley",
           "city": "Kuala Lumpur",
@@ -87,6 +88,7 @@
           "extra": null
         },
         {
+          "id": "p2",
           "title": "Promoter",
           "location": "Giant Hypermarket, Shah Alam",
           "city": "Selangor",
@@ -114,6 +116,7 @@
       "type": "software developer",
       "data": [
         {
+          "id": "sd1",
           "title": "Software Developer Intern",
           "location": "Glenmarie, Shah Alam",
           "city": "Selangor",
@@ -172,10 +175,10 @@
             {
               "name": "Git",
               "urlPrefix": "http://img.icons8.com/",
-              "urlEndpoint": "https://img.icons8.com/color/48/000000/git.png"
+              "urlEndpoint": "ios-filled/50/000000/git.png"
             },
             {
-              "name": "Azure Dev Ops",
+              "name": "Dev Ops",
               "urlPrefix": "http://img.icons8.com/",
               "urlEndpoint": "color/48/000000/azure-1.png"
             }
