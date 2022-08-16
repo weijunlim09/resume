@@ -40,6 +40,12 @@ export default function Home({ data }) {
     return nextDate - currentDate;
   });
 
+  sortedExperiences.forEach((exp) => {
+    exp[
+      "titleWithDate"
+    ] = `${exp["title"]} (${exp["startDate"]} - ${exp["endDate"]})`;
+  });
+
   console.log(sortedExperiences);
   //#endregion
 
@@ -141,8 +147,38 @@ export default function Home({ data }) {
         <BoxContainer title="Work Experience">
           {sortedExperiences?.map((experience, index) => {
             return (
-              <SubBoxContainer title={experience["title"]} key={index}>
+              <SubBoxContainer title={experience["titleWithDate"]} key={index}>
                 <div className={styles["experience"]}>
+                  <div className={styles["label"]}>Description</div>
+                  <div className={styles["value"]}>
+                    <span>{`${experience["description"][0].slice(
+                      0,
+                      50
+                    )}...`}</span>
+                  </div>
+                </div>
+                {experience["techLibaryFrameworkStacks"] && (
+                  <div className={styles["techs"]}>
+                    <ul>
+                      {experience["techLibaryFrameworkStacks"].map(
+                        (tech, count) => {
+                          return (
+                            <li key={count} data-name={tech["name"]}>
+                              <Image
+                                src={`${tech["urlPrefix"]}${tech["urlEndpoint"]}`}
+                                width="20"
+                                height="20"
+                                objectFit="fill"
+                                alt={tech["name"]}
+                              ></Image>
+                            </li>
+                          );
+                        }
+                      )}
+                    </ul>
+                  </div>
+                )}
+                {/* <div className={styles["experience"]}>
                   <div className={styles["label"]}>Location</div>
                   <div className={styles["value"]}>
                     <span>{experience["location"]}</span>
@@ -175,7 +211,7 @@ export default function Home({ data }) {
                   </div>
                 </div>
                 <div className={styles["experience"]}>
-                  <div className={styles["label"]}>Desription(s)</div>
+                  <div className={styles["label"]}>Description(s)</div>
                   <div className={styles["value"]}>
                     {experience["description"].map((description, ind) => {
                       return (
@@ -224,7 +260,7 @@ export default function Home({ data }) {
                 <div className={styles["experience"]}>
                   <div className={styles["label"]}>End Date</div>
                   <div className={styles["value"]}>formatDateHook</div>
-                </div>
+                </div> */}
               </SubBoxContainer>
             );
           })}
