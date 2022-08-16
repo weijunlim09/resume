@@ -1,8 +1,8 @@
 import Head from "next/head";
 import React, { createContext, useState } from "react";
 import { Provider } from "react-redux";
-import Footer from "../components/Footer";
-import Header from "../components/Header";
+import Footer from "../components/Footer.jsx";
+import Header from "../components/Header.jsx";
 import store from "../redux/store";
 import globalStyle from "../styles/global.module.scss";
 import "../styles/styles.css";

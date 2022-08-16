@@ -3,8 +3,8 @@ import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { useState } from "react";
-import BoxContainer from "../components/BoxContainer";
-import SubBoxContainer from "../components/SubBoxContainer";
+import BoxContainer from "../components/BoxContainer.jsx";
+import SubBoxContainer from "../components/SubBoxContainer.jsx";
 import profilePic from "../public/Header/lwj.png";
 import {
   useAddContactMutation,
