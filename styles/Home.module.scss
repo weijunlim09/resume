@@ -3,7 +3,6 @@
 
 $marginFromHeader : '50px 0';
 
-
 .home-main {
   @extend .global-body;
   display: flex;
@@ -119,12 +118,25 @@ $marginFromHeader : '50px 0';
 
   > .label {
     flex: 1;
-    min-width: 200px;
+    min-width: 100px;
     font-weight: bold;
   }
 
   > .value {
     flex: 3;
+   
+    display: flex;
+    flex-direction: column;
+    
+  
+    > span {
+      padding: 5px;
+
+      &::before {
+        content : '✔';
+        margin-right: 5px;
+      }
+    }
   }
 }
 
@@ -177,42 +189,9 @@ $marginFromHeader : '50px 0';
       &:hover::after {
         opacity: 1;
         visibility: visible;
-        transform: translateY(0);
-
-        
+        transform: translateY(0);    
       }
     
     }
   }
 }
-
-// > ul {
-//   list-style-type:  circle;
-//   padding-inline-start: 0;
-//   margin-block-start: 0;
-//   margin-block-end: 0;
-//   padding: 5px;
-  
-//   > li {
-//     display: flex;
-
-//     > div {
-//       margin-left: 5px;
-//       display: flex;
-//       align-items: center;
-
-//       > span {
-//         font-size: 15px;
-//         margin-left: 10px;
-//       }
-//     }
-
-//     &::before {
-//       content: '🤞';
-//     }
-
-//     // &::marker {
-//     //   transform: translateY(5px);
-//     // }
-//   }
-// }

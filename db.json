@@ -64,10 +64,12 @@
   "experience": [
     {
       "type": "promoter",
+      "page": "experience",
       "data": [
         {
           "id": "p1",
           "title": "Promoter",
+          "page": "experience",
           "location": "Harvey Norman, Midvalley",
           "city": "Kuala Lumpur",
           "company": "Jaybird, Logitech",
@@ -89,6 +91,7 @@
         },
         {
           "id": "p2",
+          "page": "experience",
           "title": "Promoter",
           "location": "Giant Hypermarket, Shah Alam",
           "city": "Selangor",
@@ -117,6 +120,7 @@
       "data": [
         {
           "id": "sd1",
+          "page": "experience",
           "title": "Software Developer Intern",
           "location": "Glenmarie, Shah Alam",
           "city": "Selangor",

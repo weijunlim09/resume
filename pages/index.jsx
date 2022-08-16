@@ -1,6 +1,7 @@
 import axios from "axios";
 import Head from "next/head";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import { useState } from "react";
 import BoxContainer from "../components/BoxContainer";
 import SubBoxContainer from "../components/SubBoxContainer";
@@ -8,12 +9,12 @@ import profilePic from "../public/Header/lwj.png";
 import {
   useAddContactMutation,
   useContactsQuery,
-  useContactTypeQuery,
+  useContactTypeQuery
 } from "../redux/services/ContactApi";
 import styles from "../styles/Home.module.scss";
-
 // default page
 export default function Home({ data }) {
+  const router = useRouter();
   const {
     contactData,
     selfIntroData,
@@ -147,14 +148,46 @@ export default function Home({ data }) {
         <BoxContainer title="Work Experience">
           {sortedExperiences?.map((experience, index) => {
             return (
-              <SubBoxContainer title={experience["titleWithDate"]} key={index}>
+              <SubBoxContainer
+                title={experience["titleWithDate"]}
+                className={styles["sub-box-container"]}
+                key={index}
+                onClick={() => {
+                  const landingPage = `/${experience['page']}/${experience['id']}`;
+                  router.push(landingPage);
+                }}
+              >
                 <div className={styles["experience"]}>
                   <div className={styles["label"]}>Description</div>
                   <div className={styles["value"]}>
-                    <span>{`${experience["description"][0].slice(
-                      0,
-                      50
-                    )}...`}</span>
+                    {experience["description"].map((des, ind) => {
+                      return (
+                        <span key={ind}>{`${des
+                          .split(" ")
+                          .slice(0, 10)
+                          .join(" ")}...`}</span>
+                      );
+                    })}
+                  </div>
+                </div>
+                <div className={styles["experience"]}>
+                  <div className={styles["label"]}>Company</div>
+                  <div className={styles["value"]}>
+                    <span>{experience["company"]}</span>
+                  </div>
+                </div>
+                <div className={styles["experience"]}>
+                  <div className={styles["label"]}>Location</div>
+                  <div className={styles["value"]}>
+                    <span>{experience["location"]}</span>
+                  </div>
+                </div>
+                <div className={styles["experience"]}>
+                  <div className={styles["label"]}>Products</div>
+                  <div className={styles["value"]}>
+                    {experience["products"].map((product, counter) => {
+                      return <span key={counter}>{product}</span>;
+                    })}
                   </div>
                 </div>
                 {experience["techLibaryFrameworkStacks"] && (
@@ -178,89 +211,6 @@ export default function Home({ data }) {
                     </ul>
                   </div>
                 )}
-                {/* <div className={styles["experience"]}>
-                  <div className={styles["label"]}>Location</div>
-                  <div className={styles["value"]}>
-                    <span>{experience["location"]}</span>
-                  </div>
-                </div>
-                <div className={styles["experience"]}>
-                  <div className={styles["label"]}>City</div>
-                  <div className={styles["value"]}>
-                    <span>{experience["city"]}</span>
-                  </div>
-                </div>
-                <div className={styles["experience"]}>
-                  <div className={styles["label"]}>Company</div>
-                  <div className={styles["value"]}>{experience["company"]}</div>
-                </div>
-                <div className={styles["experience"]}>
-                  <div className={styles["label"]}>Products</div>
-                  <div className={styles["value"]}>
-                    {experience["products"].map((product, i) => {
-                      return (
-                        <ul key={i}>
-                          <li>
-                            <div>
-                              <span>{product}</span>
-                            </div>
-                          </li>
-                        </ul>
-                      );
-                    })}
-                  </div>
-                </div>
-                <div className={styles["experience"]}>
-                  <div className={styles["label"]}>Description(s)</div>
-                  <div className={styles["value"]}>
-                    {experience["description"].map((description, ind) => {
-                      return (
-                        <ul key={ind}>
-                          <li>
-                            <div>
-                              <span>{description}</span>
-                            </div>
-                          </li>
-                        </ul>
-                      );
-                    })}
-                  </div>
-                </div>
-                {experience["techLibaryFrameworkStacks"] && (
-                  <div className={styles["experience"]}>
-                    <div className={styles["label"]}>Tech/Libary/Framework</div>
-                    <div className={styles["value"]}>
-                      {experience["techLibaryFrameworkStacks"].map(
-                        (tech, count) => {
-                          return (
-                            <ul key={count}>
-                              <li>
-                                <div>
-                                  <Image
-                                    src={`${tech["urlPrefix"]}${tech["urlEndpoint"]}`}
-                                    width="20"
-                                    height="20"
-                                    objectFit="fill"
-                                    alt={tech["name"]}
-                                  ></Image>
-                                  <span>{tech["name"]}</span>
-                                </div>
-                              </li>
-                            </ul>
-                          );
-                        }
-                      )}
-                    </div>
-                  </div>
-                )}
-                <div className={styles["experience"]}>
-                  <div className={styles["label"]}>Start Date</div>
-                  <div className={styles["value"]}>formatDateHook</div>
-                </div>
-                <div className={styles["experience"]}>
-                  <div className={styles["label"]}>End Date</div>
-                  <div className={styles["value"]}>formatDateHook</div>
-                </div> */}
               </SubBoxContainer>
             );
           })}
