@@ -1,0 +1,48 @@
+@use "./mixin.scss" as mixin;
+
+.skill-card-main {
+  width: 100px;
+  min-height: 100px;
+  height: 100%;
+  border: 1px solid black;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 10px;
+
+  > .skill-card-rating {
+    width: 100%;
+    height: 20px;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  > .skill-card-logo {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    margin-top: 10px;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid mixin.$purple;
+  }
+
+  > .skill-card-name {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+    > span {
+      width: 100%;
+      height: fit-content;
+      font-size: 1.5vh;
+      word-wrap: break-word;
+    }
+  }
+}

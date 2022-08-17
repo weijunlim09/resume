@@ -1,4 +1,4 @@
-.sub-box-container-main {
+.work-card-container-main {
   width: calc(100% - 22px);
   height: fit-content;
   background-color: white;
@@ -8,14 +8,14 @@
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
   margin-bottom: 10px;
   cursor: pointer;
-  
 
   &:hover {
     box-shadow: rgb(221, 146, 146) 0px 20px 30px -10px;
     transform: scale(1.1);
+    opacity: 0.5;
   }
 
-  > .sub-box-container-title {
+  > .work-card-container-title {
     border-bottom: 2px solid black;
     margin-bottom: 10px;
     text-align: left;

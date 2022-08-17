@@ -4,7 +4,8 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import BoxContainer from "../components/BoxContainer.jsx";
-import SubBoxContainer from "../components/SubBoxContainer.jsx";
+import SkillCardContainer from "../components/SkillCardContainer.jsx";
+import WorkCardContainer from "../components/WorkCardContainer.jsx";
 import profilePic from "../public/Header/lwj.png";
 import {
   useAddContactMutation,
@@ -41,17 +42,20 @@ export default function Home({ data }) {
     return nextDate - currentDate;
   });
 
+  // combining title + dates
   sortedExperiences.forEach((exp) => {
     exp[
       "titleWithDate"
     ] = `${exp["title"]} (${exp["startDate"]} - ${exp["endDate"]})`;
   });
 
-  console.log(sortedExperiences);
   //#endregion
 
   const IMAGE_HEIGHT = "30";
   const IMAGE_WIDTH = "30";
+  const PROFILE_IMAGE_HEIGHT = "200";
+  const PROFILE_IMAGE_WIDTH = "200";
+
 
   //#region RTK Query
   // const { data, error, isLoading, isFetching, isSuccess, refetch } =
@@ -69,8 +73,8 @@ export default function Home({ data }) {
             <Image
               src={profilePic}
               alt="Profile Picture"
-              width="200"
-              height="200"
+              width={PROFILE_IMAGE_WIDTH}
+              height={PROFILE_IMAGE_HEIGHT}
               objectFit="contain"
             ></Image>
             <div className={styles["profile-details"]}>
@@ -117,7 +121,7 @@ export default function Home({ data }) {
         <BoxContainer title="Profile">
           <div className={styles["short-profile"]}>
             {profileData?.["show"] && (
-              <div
+              <div 
                 dangerouslySetInnerHTML={{ __html: profileData?.["data"] }}
               ></div>
             )}
@@ -148,7 +152,7 @@ export default function Home({ data }) {
         <BoxContainer title="Work Experience">
           {sortedExperiences?.map((experience, index) => {
             return (
-              <SubBoxContainer
+              <WorkCardContainer
                 title={experience["titleWithDate"]}
                 className={styles["sub-box-container"]}
                 key={index}
@@ -211,9 +215,34 @@ export default function Home({ data }) {
                     </ul>
                   </div>
                 )}
-              </SubBoxContainer>
+              </WorkCardContainer>
             );
           })}
+        </BoxContainer>
+        <BoxContainer title="Technical Skills">
+          <div className={styles['skills']}>
+            <SkillCardContainer
+            skillLogoURL="https://img.icons8.com/ios-glyphs/30/000000/react.png"
+            skillName="React JS"
+            skillRate={5}
+            ></SkillCardContainer>
+            <SkillCardContainer
+            ></SkillCardContainer>
+            <SkillCardContainer
+            ></SkillCardContainer>
+            <SkillCardContainer
+            ></SkillCardContainer>
+            <SkillCardContainer
+            ></SkillCardContainer>
+            <SkillCardContainer
+            ></SkillCardContainer>
+            <SkillCardContainer
+            ></SkillCardContainer>
+            <SkillCardContainer
+            ></SkillCardContainer>
+            <SkillCardContainer
+            ></SkillCardContainer>
+          </div>
         </BoxContainer>
       </div>
     </div>
