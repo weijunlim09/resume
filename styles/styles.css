@@ -10,6 +10,7 @@ body {
   justify-content: center;
   background-color: silver;
   overflow: auto;
+  scroll-behavior: smooth;
 }
 
 div,

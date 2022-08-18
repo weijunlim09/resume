@@ -6,6 +6,7 @@ import { useState } from "react";
 import BoxContainer from "../components/BoxContainer.jsx";
 import SkillCardContainer from "../components/SkillCardContainer.jsx";
 import WorkCardContainer from "../components/WorkCardContainer.jsx";
+import SunwayUniPicture from '../public/Education/Sunway-University.jpg';
 import profilePic from "../public/Header/lwj.png";
 import {
   useAddContactMutation,
@@ -13,6 +14,10 @@ import {
   useContactTypeQuery
 } from "../redux/services/ContactApi";
 import styles from "../styles/Home.module.scss";
+
+import EducationCardContainer from "../components/EducationCardContainer.jsx";
+
+
 // default page
 export default function Home({ data }) {
   const router = useRouter();
@@ -55,6 +60,10 @@ export default function Home({ data }) {
   const IMAGE_WIDTH = "30";
   const PROFILE_IMAGE_HEIGHT = "200";
   const PROFILE_IMAGE_WIDTH = "200";
+
+  const technicalData = technicalSkillsData[0]['data'];
+  const selfLearnTechnicalData = selfLearnSkillsData[0]['data'];
+  
 
 
   //#region RTK Query
@@ -118,6 +127,7 @@ export default function Home({ data }) {
             </div>
           </div>
         </BoxContainer>
+
         <BoxContainer title="Profile">
           <div className={styles["short-profile"]}>
             {profileData?.["show"] && (
@@ -136,6 +146,12 @@ export default function Home({ data }) {
               })}
             </ul>
           </div>
+        </BoxContainer>
+
+
+        <BoxContainer title="Education">
+          <EducationCardContainer title="Sunway University" image={SunwayUniPicture}>
+          </EducationCardContainer>
         </BoxContainer>
 
         <BoxContainer title="Extra Details">
@@ -221,28 +237,27 @@ export default function Home({ data }) {
         </BoxContainer>
         <BoxContainer title="Technical Skills">
           <div className={styles['skills']}>
-            <SkillCardContainer
-            skillLogoURL="https://img.icons8.com/ios-glyphs/30/000000/react.png"
-            skillName="React JS"
-            skillRate={5}
-            ></SkillCardContainer>
-            <SkillCardContainer
-            ></SkillCardContainer>
-            <SkillCardContainer
-            ></SkillCardContainer>
-            <SkillCardContainer
-            ></SkillCardContainer>
-            <SkillCardContainer
-            ></SkillCardContainer>
-            <SkillCardContainer
-            ></SkillCardContainer>
-            <SkillCardContainer
-            ></SkillCardContainer>
-            <SkillCardContainer
-            ></SkillCardContainer>
-            <SkillCardContainer
-            ></SkillCardContainer>
+            {
+              technicalData?.map((data, index) => {
+                return(
+                  <SkillCardContainer key={index} skillLogoURL={`${data['urlPrefix']}${data['urlEndpoint']}`} skillName={data['data']} skillRate={data['familiarity']}>
+                  </SkillCardContainer>
+                )
+              })
+            }
           </div>
+        </BoxContainer>
+        <BoxContainer title="Self Learn Technical Skills">
+            <div className={styles['skills']}>
+              {
+                selfLearnTechnicalData?.map((data, index) => {
+                  return (
+                    <SkillCardContainer key={index} skillLogoURL={`${data['urlPrefix']}${data['urlEndpoint']}`} skillName={data['data']} skillRate={data['familiarity']}>
+                    </SkillCardContainer>
+                  )
+                })
+              }
+            </div>
         </BoxContainer>
       </div>
     </div>
@@ -282,7 +297,7 @@ export async function getStaticProps() {
     }),
     extraDetailsData: await getAxios("extraDetails"),
     technicalSkillsData: await getAxios("skills", {
-      type: "techinical",
+      type: "technical",
     }),
     softSkillsData: await getAxios("skills", {
       type: "soft",

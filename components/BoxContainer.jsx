@@ -6,9 +6,12 @@ const BoxContainer = (props) => {
     <>
       <div className={styles["box-container-main"]}>
         <div className={styles["box-container-title"]}>
-          <span>{headerTitle}</span>
+          <span>{`< ${headerTitle} >`}</span>
         </div>
         <div {...props}></div>
+        <div className={styles['box-container-title']}>
+          <span>{`</ ${headerTitle} >`}</span>
+        </div>
       </div>
     </>
   );

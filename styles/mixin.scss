@@ -1,10 +1,16 @@
-$red : indianred;
-$blue : lightblue;
+$red: indianred;
+$blue: lightblue;
 $purple: rgb(234, 110, 234);
+$header-load-time: 0.3s;
+$header-button-load-time: 0.5s;
 
-
+$work-card-hover-time: 0.3s;
 @mixin tablet {
   @media only screen and (max-width: 1000px) {
     @content;
   }
+}
+
+// if use in jsx files
+:export {
 }
