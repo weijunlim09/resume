@@ -63,7 +63,16 @@ export default function Home({ data }) {
 
   const technicalData = technicalSkillsData[0]['data'];
   const selfLearnTechnicalData = selfLearnSkillsData[0]['data'];
-  
+
+  //#region Sort Education 
+  const eduData = [...secondaryEduData, ...tertiaryEduData];
+
+  const sortedEduData = eduData.sort((current, next) => {
+    const currentDate = current['data']['dateStart'].split('/').reverse().join('/');
+    const nextDate = next['data']['dateStart'].split('/').reverse().join('/');
+    return new Date(nextDate) - new Date(currentDate);
+  })
+  //#endregion
 
 
   //#region RTK Query
@@ -131,7 +140,7 @@ export default function Home({ data }) {
         <BoxContainer title="Profile">
           <div className={styles["short-profile"]}>
             {profileData?.["show"] && (
-              <div 
+              <div
                 dangerouslySetInnerHTML={{ __html: profileData?.["data"] }}
               ></div>
             )}
@@ -150,8 +159,15 @@ export default function Home({ data }) {
 
 
         <BoxContainer title="Education">
-          <EducationCardContainer title="Sunway University" image={SunwayUniPicture}>
-          </EducationCardContainer>
+          {
+            sortedEduData?.map((ed, index) => {
+              return (
+                <EducationCardContainer key={index} data={ed}>
+                </EducationCardContainer>
+              )
+            })
+          }
+
         </BoxContainer>
 
         <BoxContainer title="Extra Details">
@@ -239,7 +255,7 @@ export default function Home({ data }) {
           <div className={styles['skills']}>
             {
               technicalData?.map((data, index) => {
-                return(
+                return (
                   <SkillCardContainer key={index} skillLogoURL={`${data['urlPrefix']}${data['urlEndpoint']}`} skillName={data['data']} skillRate={data['familiarity']}>
                   </SkillCardContainer>
                 )
@@ -248,16 +264,16 @@ export default function Home({ data }) {
           </div>
         </BoxContainer>
         <BoxContainer title="Self Learn Technical Skills">
-            <div className={styles['skills']}>
-              {
-                selfLearnTechnicalData?.map((data, index) => {
-                  return (
-                    <SkillCardContainer key={index} skillLogoURL={`${data['urlPrefix']}${data['urlEndpoint']}`} skillName={data['data']} skillRate={data['familiarity']}>
-                    </SkillCardContainer>
-                  )
-                })
-              }
-            </div>
+          <div className={styles['skills']}>
+            {
+              selfLearnTechnicalData?.map((data, index) => {
+                return (
+                  <SkillCardContainer key={index} skillLogoURL={`${data['urlPrefix']}${data['urlEndpoint']}`} skillName={data['data']} skillRate={data['familiarity']}>
+                  </SkillCardContainer>
+                )
+              })
+            }
+          </div>
         </BoxContainer>
       </div>
     </div>
@@ -276,8 +292,7 @@ export async function getStaticProps() {
       })
       .join("&");
     const response = await axios.get(
-      `${process.env.API_URL}${endpoints}${
-        Object.keys(params).length !== 0 ? `?${queryString}` : ""
+      `${process.env.API_URL}${endpoints}${Object.keys(params).length !== 0 ? `?${queryString}` : ""
       }`
     );
     const data = await response.data;

@@ -436,8 +436,8 @@
       "type": "secondary",
       "data": {
         "schoolName": "SMK METHODIST (ACS) KLANG",
-        "dateStart": "JAN 2013",
-        "dateEnd": "DEC 2017",
+        "dateStart": "01/2013",
+        "dateEnd": "12/2017",
         "academic": "SPM",
         "status": "Completion",
         "result": [
@@ -457,8 +457,8 @@
       "type": "tertiary",
       "data": {
         "schoolName": "SUNWAY COLLEGE",
-        "dateStart": "MARCH 2018",
-        "dateEnd": "MARCH 2019",
+        "dateStart": "03/2018",
+        "dateEnd": "03/2019",
         "academic": "Foundation in Arts",
         "status": "Completion",
         "result": [
@@ -474,8 +474,8 @@
       "type": "tertiary",
       "data": {
         "schoolName": "SUNWAY UNIVERSITY",
-        "dateStart": "MARCH 2019",
-        "dateEnd": "JUNE 2022",
+        "dateStart": "03/2019",
+        "dateEnd": "06/2022",
         "academic": "BSc (Hons) in Computer Science",
         "status": "Completion",
         "result": [
