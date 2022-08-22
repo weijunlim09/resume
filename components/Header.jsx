@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
 import useFetch from "../hooks/useFetch";
-import profilePic from "../public/Header/lwj.png";
 import styles from "../styles/Header.module.scss";
 import Button from "./Button.jsx";
 

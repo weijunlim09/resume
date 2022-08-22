@@ -73,10 +73,7 @@
           "location": "Harvey Norman, Midvalley",
           "city": "Kuala Lumpur",
           "company": "Jaybird, Logitech",
-          "products": [
-            "Jaybird Tarah",
-            "Jaybird X4"
-          ],
+          "products": ["Jaybird Tarah", "Jaybird X4"],
           "description": [
             "Promoted product launching of Jaybird X4 and Tarah.",
             "Listened to the needs of customers and presented product demo (solution) to customers.",
@@ -96,11 +93,7 @@
           "location": "Giant Hypermarket, Shah Alam",
           "city": "Selangor",
           "company": "Nestle",
-          "products": [
-            "Lipton",
-            "Nescafe",
-            "Milo"
-          ],
+          "products": ["Lipton", "Nescafe", "Milo"],
           "description": [
             "Promoted newly released F&B products.",
             "Giving out samples and sharing knowledge of products.",
@@ -125,9 +118,7 @@
           "location": "Glenmarie, Shah Alam",
           "city": "Selangor",
           "company": "Digital Systems Malaysia",
-          "products": [
-            "Inhouse ERP"
-          ],
+          "products": ["Inhouse ERP"],
           "description": [
             "Develop modules for DSM's ERP that provides IT solutions for Logistic company in Malaysia.",
             "Have been working as a front-end developer for 5 months and a backend developer for a month.",
@@ -435,18 +426,12 @@
     {
       "type": "secondary",
       "data": {
-        "schoolName": "SMK METHODIST (ACS) KLANG",
+        "institute": "SMK METHODIST (ACS) KLANG",
         "dateStart": "01/2013",
         "dateEnd": "12/2017",
         "academic": "SPM",
         "status": "Completion",
-        "result": [
-          "1 A+",
-          "2 A",
-          "1 A-",
-          "4 B+",
-          "1 C+"
-        ],
+        "result": ["1 A+", "2 A", "1 A-", "4 B+", "1 C+"],
         "image": "https://thumbs.dreamstime.com/b/school-building-sunset-scene-illustration-154471143.jpg"
       },
       "isAnchor": false,
@@ -456,14 +441,12 @@
     {
       "type": "tertiary",
       "data": {
-        "schoolName": "SUNWAY COLLEGE",
+        "institute": "SUNWAY COLLEGE",
         "dateStart": "03/2018",
         "dateEnd": "03/2019",
         "academic": "Foundation in Arts",
         "status": "Completion",
-        "result": [
-          3.48
-        ],
+        "result": [3.48],
         "image": "https://college.sunway.edu.my/sites/default/files/assets/students/sunway-college.jpg"
       },
       "isAnchor": false,
@@ -473,14 +456,12 @@
     {
       "type": "tertiary",
       "data": {
-        "schoolName": "SUNWAY UNIVERSITY",
+        "institute": "SUNWAY UNIVERSITY",
         "dateStart": "03/2019",
         "dateEnd": "06/2022",
         "academic": "BSc (Hons) in Computer Science",
         "status": "Completion",
-        "result": [
-          73.35
-        ],
+        "result": [73.35],
         "image": "https://www.accede.edu.np/wp-content/uploads/2020/11/Sunway-University-Malaysia-Study-in-Malaysia-.jpg"
       },
       "isAnchor": false,

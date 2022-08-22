@@ -4,23 +4,22 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import BoxContainer from "../components/BoxContainer.jsx";
+import EducationCardContainer from "../components/EducationCardContainer.jsx";
 import SkillCardContainer from "../components/SkillCardContainer.jsx";
 import WorkCardContainer from "../components/WorkCardContainer.jsx";
-import SunwayUniPicture from '../public/Education/Sunway-University.jpg';
-import profilePic from "../public/Header/lwj.png";
+import useSortDescDate from "../hooks/useSortDescDate.js";
+import profilePic from "../public/static/Header/lwj.png";
 import {
   useAddContactMutation,
   useContactsQuery,
-  useContactTypeQuery
+  useContactTypeQuery,
 } from "../redux/services/ContactApi";
 import styles from "../styles/Home.module.scss";
-
-import EducationCardContainer from "../components/EducationCardContainer.jsx";
-
 
 // default page
 export default function Home({ data }) {
   const router = useRouter();
+
   const {
     contactData,
     selfIntroData,
@@ -40,13 +39,10 @@ export default function Home({ data }) {
   const promoterExperiences = promoterData[0]["data"];
   const softwareDeveloperExperiences = softwareDeveloperData[0]["data"];
   const experiences = [...promoterExperiences, ...softwareDeveloperExperiences];
-
-  const sortedExperiences = experiences.sort((current, next) => {
-    const nextDate = new Date(next["startDate"]);
-    const currentDate = new Date(current["startDate"]);
-    return nextDate - currentDate;
-  });
-
+  const { sorted: sortedExperiences } = useSortDescDate(
+    experiences,
+    "startDate"
+  );
   // combining title + dates
   sortedExperiences.forEach((exp) => {
     exp[
@@ -61,19 +57,21 @@ export default function Home({ data }) {
   const PROFILE_IMAGE_HEIGHT = "200";
   const PROFILE_IMAGE_WIDTH = "200";
 
-  const technicalData = technicalSkillsData[0]['data'];
-  const selfLearnTechnicalData = selfLearnSkillsData[0]['data'];
+  const technicalData = technicalSkillsData[0]["data"];
+  const selfLearnTechnicalData = selfLearnSkillsData[0]["data"];
 
-  //#region Sort Education 
+  //#region Sort Education
   const eduData = [...secondaryEduData, ...tertiaryEduData];
 
   const sortedEduData = eduData.sort((current, next) => {
-    const currentDate = current['data']['dateStart'].split('/').reverse().join('/');
-    const nextDate = next['data']['dateStart'].split('/').reverse().join('/');
+    const currentDate = current["data"]["dateStart"]
+      .split("/")
+      .reverse()
+      .join("/");
+    const nextDate = next["data"]["dateStart"].split("/").reverse().join("/");
     return new Date(nextDate) - new Date(currentDate);
-  })
+  });
   //#endregion
-
 
   //#region RTK Query
   // const { data, error, isLoading, isFetching, isSuccess, refetch } =
@@ -157,17 +155,15 @@ export default function Home({ data }) {
           </div>
         </BoxContainer>
 
-
         <BoxContainer title="Education">
-          {
-            sortedEduData?.map((ed, index) => {
-              return (
-                <EducationCardContainer key={index} data={ed}>
-                </EducationCardContainer>
-              )
-            })
-          }
-
+          {sortedEduData?.map((ed, index) => {
+            return (
+              <EducationCardContainer
+                key={index}
+                data={ed}
+              ></EducationCardContainer>
+            );
+          })}
         </BoxContainer>
 
         <BoxContainer title="Extra Details">
@@ -188,22 +184,23 @@ export default function Home({ data }) {
                 title={experience["titleWithDate"]}
                 className={styles["sub-box-container"]}
                 key={index}
-                onClick={() => {
-                  const landingPage = `/${experience['page']}/${experience['id']}`;
-                  router.push(landingPage);
-                }}
               >
                 <div className={styles["experience"]}>
                   <div className={styles["label"]}>Description</div>
                   <div className={styles["value"]}>
-                    {experience["description"].map((des, ind) => {
-                      return (
-                        <span key={ind}>{`${des
-                          .split(" ")
-                          .slice(0, 10)
-                          .join(" ")}...`}</span>
-                      );
-                    })}
+                    <span>{experience["description"][0]}</span>
+                    {experience["description"].length > 1 ? (
+                      <a
+                        onClick={() => {
+                          const landingPage = `/${experience["page"]}/${experience["id"]}`;
+                          router.push(landingPage);
+                        }}
+                      >
+                        See More
+                      </a>
+                    ) : (
+                      <></>
+                    )}
                   </div>
                 </div>
                 <div className={styles["experience"]}>
@@ -227,24 +224,29 @@ export default function Home({ data }) {
                   </div>
                 </div>
                 {experience["techLibaryFrameworkStacks"] && (
-                  <div className={styles["techs"]}>
-                    <ul>
-                      {experience["techLibaryFrameworkStacks"].map(
-                        (tech, count) => {
-                          return (
-                            <li key={count} data-name={tech["name"]}>
-                              <Image
-                                src={`${tech["urlPrefix"]}${tech["urlEndpoint"]}`}
-                                width="20"
-                                height="20"
-                                objectFit="fill"
-                                alt={tech["name"]}
-                              ></Image>
-                            </li>
-                          );
-                        }
-                      )}
-                    </ul>
+                  <div className={styles["experience"]}>
+                    <div className={styles["label"]}>Techs</div>
+                    <div className={styles["value"]}>
+                      <div className={styles["techs"]}>
+                        <ul>
+                          {experience["techLibaryFrameworkStacks"].map(
+                            (tech, count) => {
+                              return (
+                                <li key={count} data-name={tech["name"]}>
+                                  <Image
+                                    src={`${tech["urlPrefix"]}${tech["urlEndpoint"]}`}
+                                    width="20"
+                                    height="20"
+                                    objectFit="fill"
+                                    alt={tech["name"]}
+                                  ></Image>
+                                </li>
+                              );
+                            }
+                          )}
+                        </ul>
+                      </div>
+                    </div>
                   </div>
                 )}
               </WorkCardContainer>
@@ -252,27 +254,31 @@ export default function Home({ data }) {
           })}
         </BoxContainer>
         <BoxContainer title="Technical Skills">
-          <div className={styles['skills']}>
-            {
-              technicalData?.map((data, index) => {
-                return (
-                  <SkillCardContainer key={index} skillLogoURL={`${data['urlPrefix']}${data['urlEndpoint']}`} skillName={data['data']} skillRate={data['familiarity']}>
-                  </SkillCardContainer>
-                )
-              })
-            }
+          <div className={styles["skills"]}>
+            {technicalData?.map((data, index) => {
+              return (
+                <SkillCardContainer
+                  key={index}
+                  skillLogoURL={`${data["urlPrefix"]}${data["urlEndpoint"]}`}
+                  skillName={data["data"]}
+                  skillRate={data["familiarity"]}
+                ></SkillCardContainer>
+              );
+            })}
           </div>
         </BoxContainer>
         <BoxContainer title="Self Learn Technical Skills">
-          <div className={styles['skills']}>
-            {
-              selfLearnTechnicalData?.map((data, index) => {
-                return (
-                  <SkillCardContainer key={index} skillLogoURL={`${data['urlPrefix']}${data['urlEndpoint']}`} skillName={data['data']} skillRate={data['familiarity']}>
-                  </SkillCardContainer>
-                )
-              })
-            }
+          <div className={styles["skills"]}>
+            {selfLearnTechnicalData?.map((data, index) => {
+              return (
+                <SkillCardContainer
+                  key={index}
+                  skillLogoURL={`${data["urlPrefix"]}${data["urlEndpoint"]}`}
+                  skillName={data["data"]}
+                  skillRate={data["familiarity"]}
+                ></SkillCardContainer>
+              );
+            })}
           </div>
         </BoxContainer>
       </div>
@@ -292,7 +298,8 @@ export async function getStaticProps() {
       })
       .join("&");
     const response = await axios.get(
-      `${process.env.API_URL}${endpoints}${Object.keys(params).length !== 0 ? `?${queryString}` : ""
+      `${process.env.API_URL}${endpoints}${
+        Object.keys(params).length !== 0 ? `?${queryString}` : ""
       }`
     );
     const data = await response.data;

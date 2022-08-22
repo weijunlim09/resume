@@ -20,15 +20,14 @@
   border-radius: 5px;
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
   margin-bottom: 10px;
-  cursor: pointer;
 
-  &:hover {
-    animation-name: work-card-hover;
-    animation-duration: mixin.$work-card-hover-time;
-    animation-timing-function: linear;
-    transform: scale(1);
-    animation-fill-mode: forwards;
-  }
+  // &:hover {
+  //   animation-name: work-card-hover;
+  //   animation-duration: mixin.$work-card-hover-time;
+  //   animation-timing-function: linear;
+  //   transform: scale(1);
+  //   animation-fill-mode: forwards;
+  // }
 
   > .work-card-container-title {
     border-bottom: 2px solid black;

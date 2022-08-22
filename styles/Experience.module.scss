@@ -2,5 +2,9 @@
 
 .experience-main {
   @extend .global-body;
-  
+
+  h1,
+  h2 {
+    text-align: center;
+  }
 }
