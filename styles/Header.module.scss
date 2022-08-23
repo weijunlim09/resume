@@ -57,6 +57,16 @@
     > .right-buttons {
     }
   }
+  > .current-location {
+    background-color: white;
+    padding: 10px;
+    font-size: 0.8rem;
+
+    > a {
+      color: blue;
+      cursor: pointer;
+    }
+  }
 }
 
 @keyframes header-load {

@@ -1,14 +1,24 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useRef } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import useFetch from "../hooks/useFetch";
 import styles from "../styles/Header.module.scss";
 import Button from "./Button.jsx";
+
+import { useRouter } from "next/router";
 
 const Header = () => {
   const customButtonClicked = () => {
     console.log("refreshclicked");
   };
+  const router = useRouter();
+  const [path, setPath] = useState("");
+
+  useEffect(() => {
+    setPath(router.asPath);
+  }, [router]);
+
+  // console.log(router);
   return (
     <>
       <div className={styles["header-main"]}>
@@ -75,7 +85,15 @@ const Header = () => {
             </ul>
           </div>
         </div>
-        <div className={styles["current-location"]}>cur location</div>
+        <div className={styles["current-location"]}>
+          You are here &nbsp; : &nbsp;
+          <Link href={path == "/" ? "/#" : "/"}>
+            <a>Home</a>
+          </Link>
+          <span>
+            {path == "/" || path == "/#" ? "" : path.split("/").join(" / ")}
+          </span>
+        </div>
       </div>
     </>
   );

@@ -362,7 +362,7 @@
         "Report daily sales update to supervisor. "
       ],
       "shortDesc": "Jaybird sells headphones in a niche market",
-      "startDate": "22/11/2018",
+      "startDate": "01/11/2018",
       "endDate": "25/12/2018",
       "isAnchor": false,
       "show": true,
@@ -405,7 +405,7 @@
       "company": "Digital Systems Malaysia",
       "products": ["Inhouse ERP"],
       "description": [
-        "Develop modules for DSM's Entreprise Resoure Planning",
+        "Develop modules for DSM's Web Application",
         "Have been working as a front-end developer for 5 months and a backend developer for a month.",
         "Have experience in end-to-end project development from writing stored procedures, building APIs, UI/UX design, creating pages/components, creating controller, building logic, testing, deploy to production and maintenance.",
         "Received guidance and support from peers and senior software engineers, honed technical skills in writing custom, scalable, extensible code.",

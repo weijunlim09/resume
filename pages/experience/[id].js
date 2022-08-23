@@ -174,6 +174,7 @@ const ExperienceId = ({ data }) => {
             </div>
           </>
         )}
+        <hr></hr>
       </div>
     </>
   );
