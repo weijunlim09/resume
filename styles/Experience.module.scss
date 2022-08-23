@@ -7,4 +7,15 @@
   h2 {
     text-align: center;
   }
+
+  > .experiences-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    overflow: hidden;
+
+    > * {
+      justify-self: center;
+      margin: 20px 0;
+    }
+  }
 }

@@ -1,34 +1,72 @@
 import axios from "axios";
 import { useRouter } from "next/router";
 import { useContext, useEffect, useState } from "react";
+import styled from "styled-components";
+import CircleBox from "../../components/CircleBox";
 import useSortDescDate from "../../hooks/useSortDescDate";
 import styles from "../../styles/Experience.module.scss";
 import { AppContext } from "../_app";
 
 const Experience = ({ data }) => {
-  const workTypeHasVariety =
-    [...new Set(data.map((i) => i["type"]))].length > 1;
+  // console.log(data);
+  const router = useRouter();
 
-  console.log(data);
-  // const unwrappedWorkData = data.map((singleData) => {
-  //   return singleData["data"];
-  // });
+  const addIconToData = data.map((jobType) => {
+    jobType["data"].map((job) => {
+      return (job["url"] = `${jobType["urlPrefix"]}${jobType["urlEndpoint"]}`);
+    });
+    return jobType;
+  });
 
-  // console.log(unwrappedWorkData);
+  const getAllId = [
+    ...new Set(addIconToData.map((job) => job["data"].map((j) => j["id"]))),
+  ].flat(Number.POSITIVE_INFINITY);
 
-  // const { sorted: sortedExperiences } = useSortDescDate(
-  //   unwrappedWorkData,
-  //   "startDate"
-  // );
+  const allData = addIconToData
+    .map((job) => job["data"])
+    .flat(Number.POSITIVE_INFINITY);
+  const { sorted: sortedAllData } = useSortDescDate(allData, "startDate");
 
-  // console.log(sortedExperiences);
+  //#region Add New Title Key
+  const addedNewKeyWorkData = sortedAllData.map((data) => {
+    return {
+      url: data["url"],
+      title: (data["desc"] = `${data["title"]} for ${data["company"]}`),
+      id: data["id"],
+      logoSize: {
+        width: "400",
+        height: "400",
+      },
+    };
+  });
+  console.log(addedNewKeyWorkData);
+  //#endregion
 
   return (
     <>
       <div className={styles["experience-main"]}>
         <h1>Work Experiences</h1>
         <h2>What I have done</h2>
-        <div></div>
+        <div className={styles["experiences-content"]}>
+          {addedNewKeyWorkData?.map((data) => {
+            return (
+              <>
+                <div
+                  onClick={() => {
+                    router.push(`/experience/${data["id"]}`);
+                  }}
+                  style={{ cursor: "pointer" }}
+                >
+                  <CircleBox
+                    url={data["url"]}
+                    title={data["title"]}
+                    logoSize={data["logoSize"]}
+                  ></CircleBox>
+                </div>
+              </>
+            );
+          })}
+        </div>
       </div>
     </>
   );

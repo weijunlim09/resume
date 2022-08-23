@@ -1,0 +1,28 @@
+.circle-box-main {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  overflow: hidden;
+  padding: 20px;
+  width: 500px;
+  height: 500px;
+  border-radius: 100%;
+
+  &:hover {
+    backdrop-filter: saturate(50);
+
+    > .circle-box-label {
+      background-color: rgb(117, 116, 116);
+      color: white;
+      border-radius: 5px;
+    }
+  }
+
+  > .circle-box-label {
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 5px;
+  }
+}
