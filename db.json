@@ -61,135 +61,6 @@
     "isAnchor": false,
     "show": true
   },
-  "experience": [
-    {
-      "type": "promoter",
-      "urlPrefix": "http://img.icons8.com/",
-      "urlEndpoint": "external-smashingstocks-mixed-smashing-stocks/68/000000/external-promoter-digital-marketing-smashingstocks-mixed-smashing-stocks.png",
-      "data": [
-        {
-          "id": "p1",
-          "title": "Promoter",
-          "page": "experience",
-          "location": "Harvey Norman, Midvalley",
-          "city": "Kuala Lumpur",
-          "company": "Jaybird, Logitech",
-          "products": ["Jaybird Tarah", "Jaybird X4"],
-          "description": [
-            "Promoted product launching of Jaybird X4 and Tarah.",
-            "Listened to the needs of customers and presented product demo (solution) to customers.",
-            "Hit sales target required for most days.",
-            "Report daily sales update to supervisor. "
-          ],
-          "startDate": "01/11/2018",
-          "endDate": "01/12/2018",
-          "isAnchor": false,
-          "show": true,
-          "extra": null
-        },
-        {
-          "id": "p2",
-          "page": "experience",
-          "title": "Promoter",
-          "location": "Giant Hypermarket, Shah Alam",
-          "city": "Selangor",
-          "company": "Nestle",
-          "products": ["Lipton", "Nescafe", "Milo"],
-          "description": [
-            "Promoted newly released F&B products.",
-            "Giving out samples and sharing knowledge of products.",
-            "Taken care of booth during the promotion",
-            "Report daily sales to supervisor"
-          ],
-          "startDate": "01/11/2019",
-          "endDate": "01/12/2019",
-          "isAnchor": false,
-          "show": true,
-          "extra": null
-        }
-      ]
-    },
-    {
-      "type": "software developer",
-      "urlPrefix": "http://img.icons8.com/",
-      "urlEndpoint": "external-kiranshastry-lineal-kiranshastry/64/000000/external-developer-coding-kiranshastry-lineal-kiranshastry.png",
-      "data": [
-        {
-          "id": "sd1",
-          "page": "experience",
-          "title": "Software Developer Intern",
-          "location": "Glenmarie, Shah Alam",
-          "city": "Selangor",
-          "company": "Digital Systems Malaysia",
-          "products": ["Inhouse ERP"],
-          "description": [
-            "Develop modules for DSM's ERP that provides IT solutions for Logistic company in Malaysia.",
-            "Have been working as a front-end developer for 5 months and a backend developer for a month.",
-            "Have experience in end-to-end project development from writing stored procedures, building APIs, UI/UX design, creating pages/components, creating controller, building logic, testing, deploy to production and maintenance.",
-            "Received guidance and support from peers and senior software engineers, honed technical skills in writing custom, scalable, extensible code.",
-            "Recommended changes in code logic and design, receiving recognition from supervisor for ideas and implementations."
-          ],
-          "techLibaryFrameworkStacks": [
-            {
-              "name": "Vue JS",
-              "urlPrefix": "http://img.icons8.com/",
-              "urlEndpoint": "external-tal-revivo-shadow-tal-revivo/24/000000/external-vuejs-an-open-source-javascript-framework-for-building-user-interfaces-and-single-page-applications-logo-shadow-tal-revivo.png"
-            },
-            {
-              "name": "Vuex",
-              "urlPrefix": "http://img.icons8.com/",
-              "urlEndpoint": "external-tal-revivo-shadow-tal-revivo/24/000000/external-vuejs-an-open-source-javascript-framework-for-building-user-interfaces-and-single-page-applications-logo-shadow-tal-revivo.png"
-            },
-            {
-              "name": "Axios",
-              "urlPrefix": "http://img.icons8.com/",
-              "urlEndpoint": "material-outlined/24/000000/api-settings.png"
-            },
-            {
-              "name": "SCSS",
-              "urlPrefix": "http://img.icons8.com/",
-              "urlEndpoint": "external-creatype-outline-colourcreatype/64/000000/external-document-file-extension-web-format-file-creatype-outline-colourcreatype-60.png"
-            },
-            {
-              "name": "SQL Server",
-              "urlPrefix": "http://img.icons8.com/",
-              "urlEndpoint": "ios/50/000000/servers-group--v2.png"
-            },
-            {
-              "name": "ASP.NET Core",
-              "urlPrefix": "http://img.icons8.com/",
-              "urlEndpoint": "external-tal-revivo-bold-tal-revivo/24/000000/external-net-or-dot-net-a-software-framework-developed-by-microsoft-logo-bold-tal-revivo.png"
-            },
-            {
-              "name": ".NET Framework",
-              "urlPrefix": "http://img.icons8.com/",
-              "urlEndpoint": "external-tal-revivo-bold-tal-revivo/24/000000/external-net-or-dot-net-a-software-framework-developed-by-microsoft-logo-bold-tal-revivo.png"
-            },
-            {
-              "name": "Figma",
-              "urlPrefix": "http://img.icons8.com/",
-              "urlEndpoint": "color/48/000000/figma--v1.png"
-            },
-            {
-              "name": "Git",
-              "urlPrefix": "http://img.icons8.com/",
-              "urlEndpoint": "ios-filled/50/000000/git.png"
-            },
-            {
-              "name": "Dev Ops",
-              "urlPrefix": "http://img.icons8.com/",
-              "urlEndpoint": "color/48/000000/azure-1.png"
-            }
-          ],
-          "startDate": "03/01/2022",
-          "endDate": "04/07/2022",
-          "isAnchor": false,
-          "show": true,
-          "extra": null
-        }
-      ]
-    }
-  ],
   "extraDetails": [
     {
       "type": "extraDetails",
@@ -467,6 +338,138 @@
         "result": [73.35],
         "image": "https://www.accede.edu.np/wp-content/uploads/2020/11/Sunway-University-Malaysia-Study-in-Malaysia-.jpg"
       },
+      "isAnchor": false,
+      "show": true,
+      "extra": null
+    }
+  ],
+  "experience": [
+    {
+      "type": "Promoter",
+      "urlPrefix": "http://img.icons8.com/",
+      "urlEndpoint": "external-smashingstocks-mixed-smashing-stocks/68/000000/external-promoter-digital-marketing-smashingstocks-mixed-smashing-stocks.png",
+      "id": "p1",
+      "title": "Promoter",
+      "page": "experience",
+      "location": "Harvey Norman, Midvalley",
+      "city": "Kuala Lumpur",
+      "company": "Jaybird, Logitech",
+      "products": ["Jaybird Tarah", "Jaybird X4"],
+      "description": [
+        "Promoted product launching of Jaybird X4 and Tarah.",
+        "Listened to the needs of customers and presented product demo (solution) to customers.",
+        "Hit sales target required for most days.",
+        "Report daily sales update to supervisor. "
+      ],
+      "shortDesc": "Jaybird sells headphones in a niche market",
+      "startDate": "22/11/2018",
+      "endDate": "25/12/2018",
+      "isAnchor": false,
+      "show": true,
+      "extra": null
+    },
+    {
+      "type": "Promoter",
+      "urlPrefix": "http://img.icons8.com/",
+      "urlEndpoint": "external-smashingstocks-mixed-smashing-stocks/68/000000/external-promoter-digital-marketing-smashingstocks-mixed-smashing-stocks.png",
+      "id": "p2",
+      "title": "Promoter",
+      "page": "experience",
+      "location": "Giant Hypermarket, Shah Alam",
+      "city": "Selangor",
+      "company": "Nestle",
+      "products": ["Lipton", "Nescafe", "Milo"],
+      "description": [
+        "Promoted newly released F&B products.",
+        "Giving out samples and sharing knowledge of products.",
+        "Taken care of booth during the promotion",
+        "Report daily sales to supervisor"
+      ],
+      "shortDesc": "Nestle sells F&B products",
+      "startDate": "01/11/2019",
+      "endDate": "01/12/2019",
+      "isAnchor": false,
+      "show": true,
+      "extra": null
+    },
+    {
+      "type": "Software Developer",
+      "urlPrefix": "http://img.icons8.com/",
+      "urlEndpoint": "external-kiranshastry-lineal-kiranshastry/64/000000/external-developer-coding-kiranshastry-lineal-kiranshastry.png",
+      "id": "sd1",
+      "shortDesc": "DSM provides IT solutions for Logistic company in Malaysia.",
+      "page": "experience",
+      "title": "Software Developer Intern",
+      "location": "Glenmarie, Shah Alam",
+      "city": "Selangor",
+      "company": "Digital Systems Malaysia",
+      "products": ["Inhouse ERP"],
+      "description": [
+        "Develop modules for DSM's Entreprise Resoure Planning",
+        "Have been working as a front-end developer for 5 months and a backend developer for a month.",
+        "Have experience in end-to-end project development from writing stored procedures, building APIs, UI/UX design, creating pages/components, creating controller, building logic, testing, deploy to production and maintenance.",
+        "Received guidance and support from peers and senior software engineers, honed technical skills in writing custom, scalable, extensible code.",
+        "Recommended changes in code logic and design, receiving recognition from supervisor for ideas and implementations."
+      ],
+      "clients": [
+        "Tuck Sun Logistics Group",
+        "EHL Logistics Sdn Bhd",
+        "FM Global Logistics (M) Sdn Bhd"
+      ],
+      "techLibaryFrameworkStacks": [
+        {
+          "name": "Vue JS",
+          "urlPrefix": "http://img.icons8.com/",
+          "urlEndpoint": "external-tal-revivo-shadow-tal-revivo/24/000000/external-vuejs-an-open-source-javascript-framework-for-building-user-interfaces-and-single-page-applications-logo-shadow-tal-revivo.png"
+        },
+        {
+          "name": "Vuex",
+          "urlPrefix": "http://img.icons8.com/",
+          "urlEndpoint": "external-tal-revivo-shadow-tal-revivo/24/000000/external-vuejs-an-open-source-javascript-framework-for-building-user-interfaces-and-single-page-applications-logo-shadow-tal-revivo.png"
+        },
+        {
+          "name": "Axios",
+          "urlPrefix": "http://img.icons8.com/",
+          "urlEndpoint": "material-outlined/24/000000/api-settings.png"
+        },
+        {
+          "name": "SCSS",
+          "urlPrefix": "http://img.icons8.com/",
+          "urlEndpoint": "external-creatype-outline-colourcreatype/64/000000/external-document-file-extension-web-format-file-creatype-outline-colourcreatype-60.png"
+        },
+        {
+          "name": "SQL Server",
+          "urlPrefix": "http://img.icons8.com/",
+          "urlEndpoint": "ios/50/000000/servers-group--v2.png"
+        },
+        {
+          "name": "ASP.NET Core",
+          "urlPrefix": "http://img.icons8.com/",
+          "urlEndpoint": "external-tal-revivo-bold-tal-revivo/24/000000/external-net-or-dot-net-a-software-framework-developed-by-microsoft-logo-bold-tal-revivo.png"
+        },
+        {
+          "name": ".NET Framework",
+          "urlPrefix": "http://img.icons8.com/",
+          "urlEndpoint": "external-tal-revivo-bold-tal-revivo/24/000000/external-net-or-dot-net-a-software-framework-developed-by-microsoft-logo-bold-tal-revivo.png"
+        },
+        {
+          "name": "Figma",
+          "urlPrefix": "http://img.icons8.com/",
+          "urlEndpoint": "color/48/000000/figma--v1.png"
+        },
+        {
+          "name": "Git",
+          "urlPrefix": "http://img.icons8.com/",
+          "urlEndpoint": "ios-filled/50/000000/git.png"
+        },
+        {
+          "name": "Dev Ops",
+          "urlPrefix": "http://img.icons8.com/",
+          "urlEndpoint": "color/48/000000/azure-1.png"
+        }
+      ],
+      "startDate": "03/01/2022",
+      "endDate": "04/07/2022",
       "isAnchor": false,
       "show": true,
       "extra": null

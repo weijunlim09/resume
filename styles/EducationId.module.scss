@@ -1,0 +1,112 @@
+@use "./mixin.scss" as mixin;
+
+@import "./Home.module.scss";
+
+.experience-id-main {
+  width: 100%;
+  height: 100%;
+
+  > h1 {
+    text-align: center;
+  }
+
+  > hr {
+    border-width: 20px;
+  }
+
+  > .experience-id-company {
+    width: min(95%, 70rem);
+
+    padding-block: 2rem;
+    margin-inline: auto;
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(3, 1fr);
+
+    > div {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+    }
+    :first-child {
+      grid-column: span 3;
+      text-align: center;
+    }
+    :nth-child(2) {
+      grid-column: span 2;
+    }
+
+    // :nth-child(2) {
+    //   grid-row: 2 / span 2;
+    // }
+
+    // // grid-column-start: 4
+    // // grid-row-start: 1
+    // // grid-row-end : span 2 == grid-row : 1 / span 2
+
+    // > * {
+    //   width: 100%;
+    // }
+
+    // > .grid-col-span-3 {
+    //   @extend .experience-id-company;
+    //   text-align: center;
+    //   grid-column: span 3;
+    // }
+  }
+
+  > .experience-id-duration {
+    grid-template-columns: repeat(2, 1fr);
+    @extend .experience-id-company;
+    :nth-child(2) {
+      grid-column: unset;
+    }
+  }
+
+  > .experience-id-description {
+    grid-template-columns: repeat(4, 1fr);
+    @extend .experience-id-company;
+
+    :first-child {
+      grid-column: span 4;
+    }
+
+    > .grid-col-span-4 {
+      grid-column: span 4;
+    }
+    > .grid-col-span-2 {
+      grid-column: span 2;
+    }
+
+    > div {
+      padding: 20px;
+      border-radius: 20%;
+      background-color: #c8a2c8;
+
+      &::before {
+        // margin: 0 5px;
+        content: "✔";
+      }
+    }
+  }
+}
+
+.logo-circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 1px solid black;
+  background-color: wheat;
+}
+
+.skills {
+  width: min(95%, 70rem);
+
+  padding-block: 2rem;
+  margin-inline: auto;
+
+  :first-child {
+    grid-column: 1 / -1;
+  }
+}

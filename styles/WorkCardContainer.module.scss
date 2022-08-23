@@ -32,10 +32,11 @@
   > .work-card-container-title {
     border-bottom: 2px solid black;
     margin-bottom: 10px;
-    text-align: left;
+    text-align: center;
+
     > span {
       text-shadow: 2px 2px 8px rgb(221, 146, 146);
-      font-size: 13px;
+      font-size: 2rem;
     }
   }
 }

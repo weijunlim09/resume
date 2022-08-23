@@ -35,15 +35,12 @@ export default function Home({ data }) {
   } = data;
 
   //#region Sorting Work Experience
-
-  const promoterExperiences = promoterData[0]["data"];
-  const softwareDeveloperExperiences = softwareDeveloperData[0]["data"];
-  const experiences = [...promoterExperiences, ...softwareDeveloperExperiences];
+  const experiences = [...promoterData, ...softwareDeveloperData];
   const { sorted: sortedExperiences } = useSortDescDate(
     experiences,
     "startDate"
   );
-  // combining title + dates
+
   sortedExperiences.forEach((exp) => {
     exp[
       "titleWithDate"
@@ -312,10 +309,10 @@ export async function getStaticProps() {
     selfIntroData: await getAxios("introduction"),
     profileData: await getAxios("profile"),
     promoterData: await getAxios("experience", {
-      type: "promoter",
+      type: "Promoter",
     }),
     softwareDeveloperData: await getAxios("experience", {
-      type: "software developer",
+      type: "Software Developer",
     }),
     extraDetailsData: await getAxios("extraDetails"),
     technicalSkillsData: await getAxios("skills", {

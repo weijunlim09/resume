@@ -4,7 +4,7 @@ import styles from "../../styles/Education.module.scss";
 const Education = () => {
   const router = useRouter();
   const { params = [] } = router.query;
-  console.log(params);
+  // console.log(params);
 
   if (params.length != 0) {
     return <h1>{params}</h1>;
