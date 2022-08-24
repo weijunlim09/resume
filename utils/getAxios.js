@@ -1,6 +1,6 @@
 import axios from "axios";
 
-var getAxios = async (endpoints, params = {}) => {
+const _getAxios = async (endpoints, params = {}) => {
   const queryString = Object.entries(params)
     .map((param) => {
       return `${param[0]}=${param[1]}`;
@@ -16,5 +16,4 @@ var getAxios = async (endpoints, params = {}) => {
   return data;
 };
 
-const _getAxios = getAxios;
 export { _getAxios as getAxios };

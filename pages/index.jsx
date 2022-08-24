@@ -1,4 +1,3 @@
-import axios from "axios";
 import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
@@ -15,6 +14,7 @@ import {
   useContactTypeQuery,
 } from "../redux/services/ContactApi";
 import styles from "../styles/Home.module.scss";
+import { getAxios } from "../utils/getAxios.js";
 
 // default page
 export default function Home({ data }) {
@@ -286,23 +286,6 @@ export default function Home({ data }) {
 export async function getStaticProps() {
   // we cannot use React hooks in getstaticprops
   // we cannot use getStaticProps in Components - only applicable to pages
-
-  // facade pattern
-  async function getAxios(endpoints, params = {}) {
-    const queryString = Object.entries(params)
-      .map((param) => {
-        return `${param[0]}=${param[1]}`;
-      })
-      .join("&");
-    const response = await axios.get(
-      `${process.env.API_URL}${endpoints}${
-        Object.keys(params).length !== 0 ? `?${queryString}` : ""
-      }`
-    );
-    const data = await response.data;
-
-    return data;
-  }
 
   const data = {
     contactData: await getAxios("contact"),

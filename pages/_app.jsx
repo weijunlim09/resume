@@ -10,6 +10,8 @@ import globalStyle from "../styles/global.module.scss";
 import "../styles/styles.css";
 import variables from "../styles/variables.module.scss";
 
+import { getAxios } from "../utils/getAxios.js";
+
 export const AppContext = createContext();
 
 function MyApp({ Component, pageProps }) {
@@ -19,22 +21,6 @@ function MyApp({ Component, pageProps }) {
     return Component.getLayout(<Component {...pageProps}></Component>);
   }
 
-  async function getAxios(endpoints, params = {}) {
-    const queryString = Object.entries(params)
-      .map((param) => {
-        return `${param[0]}=${param[1]}`;
-      })
-      .join("&");
-    const response = await axios.get(
-      `${process.env.API_URL}${endpoints}${
-        Object.keys(params).length !== 0 ? `?${queryString}` : ""
-      }`
-    );
-    const data = await response.data;
-
-    return data;
-  }
-
   const testing = { name: "hi" };
 
   // useContext, API is not used due to we are using getStaticProps function
@@ -42,7 +28,7 @@ function MyApp({ Component, pageProps }) {
     <React.StrictMode>
       <Provider store={store}>
         <div className={globalStyle["global-main"]}>
-          <AppContext.Provider value={{ getAxios }}>
+          <AppContext.Provider value={{ testing }}>
             {/* <Image
             src={bgImage["src"]}
             alt={bgImage.toString()}
