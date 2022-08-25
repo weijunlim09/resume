@@ -172,9 +172,9 @@ const ExperienceId = ({ data }) => {
                 );
               })}
             </div>
+            <hr></hr>
           </>
         )}
-        <hr></hr>
       </div>
     </>
   );

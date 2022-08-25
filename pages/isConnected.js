@@ -1,28 +1,22 @@
-import clientPromise from "../lib/mongodb.js";
+import { getApi } from "../utils/getApi.js";
 
-const isConnected = ({ isConnected }) => {
+const isConnected = ({ data }) => {
   return (
     <>
-      <h1>{isConnected.toString()}</h1>
+      <h1>{JSON.stringify(data)}</h1>
     </>
   );
 };
 
 export default isConnected;
 
-export async function getServerSideProps() {
-  let isConnected;
-
-  try {
-    const client = await clientPromise;
-    isConnected = true;
-  } catch (e) {
-    isConnected = false;
-  }
+export async function getStaticProps() {
+  const data = await getApi("profile");
 
   return {
     props: {
-      isConnected,
+      data,
     },
+    revalidate: 10,
   };
 }
