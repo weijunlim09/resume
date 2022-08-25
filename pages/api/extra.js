@@ -1,10 +1,7 @@
-import { ObjectId } from "mongodb";
-import clientPromise from "../../lib/mongodb";
+import { queryWithoutParams } from "../../utils/api/queryWithoutParams";
 
 export default async function handler(req, res) {
-  const client = await clientPromise;
-  const database = client.db("Resume");
-  const sample = await database.collection("Extra").find({}).toArray();
+  const result = await queryWithoutParams("Extra");
 
-  res.status(200).json(sample);
+  res.status(200).json(result);
 }

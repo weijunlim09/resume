@@ -5,7 +5,6 @@ import clientPromise from "../../lib/mongodb";
 
 export default async function handler(req, res) {
   const query = req.query["id"];
-  console.log(query);
 
   const client = await clientPromise;
   const database = client.db("sample");
