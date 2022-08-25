@@ -1,19 +1,8 @@
-import { ObjectId } from "mongodb";
-import clientPromise from "../../lib/mongodb";
-
+import { queryWithParams } from "../../utils/api/queryWithParams";
 export default async function handler(req, res) {
-  const client = await clientPromise;
-  const database = client.db("Resume");
-
   const query = req.query;
 
-  let result;
-
-  if (Object.keys(query).length == 0) {
-    result = await database.collection("Experience").find({}).toArray();
-  } else {
-    result = await database.collection("Experience").find(query).toArray();
-  }
+  const result = await queryWithParams("Experience", query);
 
   res.status(200).json(result);
 }
