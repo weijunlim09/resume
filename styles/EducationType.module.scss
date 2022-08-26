@@ -1,0 +1,99 @@
+@use "./mixin.scss" as mixin;
+@import "./Home.module.scss";
+
+.education-type-main {
+  width: 100%;
+  height: 100%;
+  // background-color: orange;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  > h1 {
+    text-align: center;
+  }
+
+  > .education-type-content {
+    width: 100%;
+    height: 100%;
+    padding: 50px;
+
+    > .education-type-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0 50px;
+      box-shadow: rgba(240, 117, 51, 0.56) 0px 22px 70px 4px;
+      border-radius: 10px;
+
+      > .education-type-title {
+        margin: 20px 0;
+        border-bottom: 2px solid black;
+        color: #121212;
+        text-shadow: 2px 7px 5px rgba(0, 0, 0, 0.3),
+          0px -4px 10px rgba(255, 255, 255, 0.3);
+        font-size: 1.5em;
+        font-weight: 900;
+      }
+
+      > .education-type-details {
+        display: grid;
+        width: 100%;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        position: relative;
+
+        :first-child {
+          grid-column: 1 / span 2;
+          grid-row: 1 / span 2;
+        }
+
+        :nth-child(5) {
+          grid-column: 2 / span 2;
+        }
+        // seventh child and ownwards
+        :nth-child(n + 7) {
+          // grid-column: 1 /-1;
+        }
+        :nth-child(6) {
+          grid-column: 1 / span 2;
+        }
+
+        > div {
+          text-align: center;
+          border-radius: 10px;
+          padding: 10px;
+          box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+            rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+            rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+          font-size: 0.8em;
+          text-shadow: 2px 2px 2px #ceadae;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+
+          > h7 {
+            text-decoration: underline;
+          }
+          > span {
+            font-weight: bolder;
+          }
+        }
+      }
+    }
+  }
+  > hr {
+    border-width: 20px;
+    width: calc(100% - 40px);
+  }
+}
+
+.extra-span {
+  font-size: 0.7rem;
+  margin: 2px 0;
+
+  &::before {
+    content: "✔";
+  }
+}

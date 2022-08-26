@@ -1,6 +1,6 @@
 @import "global.module.scss";
 
-.experience-main {
+.circle-box-main {
   @extend .global-body;
 
   h1,
@@ -8,7 +8,7 @@
     text-align: center;
   }
 
-  > .experiences-content {
+  > .circle-box-content {
     display: grid;
     grid-template-columns: 1fr;
     overflow: hidden;

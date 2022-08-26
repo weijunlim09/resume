@@ -1,10 +1,9 @@
 import { useRouter } from "next/router";
-import { getAxios } from "../../utils/getAxios";
+import { getApi } from "../../utils/getApi";
 
 import Image from "next/image";
 import SkillCardContainer from "../../components/SkillCardContainer";
-import WorkCardContainer from "../../components/WorkCardContainer";
-import styles from "../../styles/EducationId.module.scss";
+import styles from "../../styles/ExperienceId.module.scss";
 
 const ExperienceId = ({ data }) => {
   const router = useRouter();
@@ -183,7 +182,7 @@ const ExperienceId = ({ data }) => {
 export default ExperienceId;
 
 export async function getStaticPaths() {
-  const data = await getAxios("experience");
+  const data = await getApi("experience");
   const paths = data.map((i) => {
     return {
       params: {
@@ -200,7 +199,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(context) {
   const { id } = context.params;
-  const data = await getAxios("experience", {
+  const data = await getApi("experience", {
     id: id,
   });
 

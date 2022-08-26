@@ -1,3 +1,4 @@
+import { getPageFiles } from "next/dist/server/get-page-files.js";
 import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
@@ -14,6 +15,7 @@ import {
   useContactTypeQuery,
 } from "../redux/services/ContactApi";
 import styles from "../styles/Home.module.scss";
+import { getApi } from "../utils/getApi";
 import { getAxios } from "../utils/getAxios.js";
 
 // default page
@@ -59,15 +61,8 @@ export default function Home({ data }) {
 
   //#region Sort Education
   const eduData = [...secondaryEduData, ...tertiaryEduData];
+  const { sorted: sortedEduData } = useSortDescDate(eduData, "dateStart");
 
-  const sortedEduData = eduData.sort((current, next) => {
-    const currentDate = current["data"]["dateStart"]
-      .split("/")
-      .reverse()
-      .join("/");
-    const nextDate = next["data"]["dateStart"].split("/").reverse().join("/");
-    return new Date(nextDate) - new Date(currentDate);
-  });
   //#endregion
 
   //#region RTK Query
@@ -92,10 +87,10 @@ export default function Home({ data }) {
             ></Image>
             <div className={styles["profile-details"]}>
               {selfIntroData?.["show"] && (
-                <span>{selfIntroData?.["data"]["name"]}</span>
+                <span>{selfIntroData?.["name"]}</span>
               )}
               {selfIntroData?.["show"] && (
-                <span>{selfIntroData?.["data"]["description"]}</span>
+                <span>{selfIntroData?.["description"]}</span>
               )}
 
               <div className={styles["contact-details"]}>
@@ -288,37 +283,40 @@ export async function getStaticProps() {
   // we cannot use getStaticProps in Components - only applicable to pages
 
   const data = {
-    contactData: await getAxios("contact"),
-    selfIntroData: await getAxios("introduction"),
-    profileData: await getAxios("profile"),
-    promoterData: await getAxios("experience", {
+    contactData: await getApi("contact"),
+    selfIntroData: await getApi("introduction"),
+    profileData: await getApi("profile"),
+    promoterData: await getApi("experience", {
       type: "Promoter",
     }),
-    softwareDeveloperData: await getAxios("experience", {
+    softwareDeveloperData: await getApi("experience", {
       type: "Software Developer",
     }),
-    extraDetailsData: await getAxios("extraDetails"),
-    technicalSkillsData: await getAxios("skills", {
+    extraDetailsData: await getApi("extra"),
+    technicalSkillsData: await getApi("skills", {
       type: "technical",
     }),
-    softSkillsData: await getAxios("skills", {
+    softSkillsData: await getApi("skills", {
       type: "soft",
     }),
-    selfLearnSkillsData: await getAxios("skills", {
+    selfLearnSkillsData: await getApi("skills", {
       type: "selfLearn",
     }),
-    secondaryEduData: await getAxios("education", {
+    secondaryEduData: await getApi("education", {
       type: "secondary",
     }),
-    tertiaryEduData: await getAxios("education", {
+    tertiaryEduData: await getApi("education", {
       type: "tertiary",
     }),
   };
 
+  const newData = await getApi("contact");
+
+  console.log(newData);
   return {
     props: {
       data,
     },
-    revalidate: 10,
+    revalidate: process.env.REVALIDATE_VALUE,
   };
 }

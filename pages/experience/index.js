@@ -1,16 +1,23 @@
 import { useRouter } from "next/router";
 import { useContext, useEffect, useState } from "react";
-import styled from "styled-components";
 import CircleBox from "../../components/CircleBox";
 import useSortDescDate from "../../hooks/useSortDescDate";
-import styles from "../../styles/Experience.module.scss";
-import { getAxios } from "../../utils/getAxios";
+import styles from "../../styles/SelectCircleBox.module.scss";
+import { getApi } from "../../utils/getApi";
 import { AppContext } from "../_app";
 
 const Experience = ({ data }) => {
   const router = useRouter();
-
   const { sorted: sortedAllData } = useSortDescDate(data, "startDate");
+  if (data.length == 0 || !data) {
+    return (
+      <>
+        <h1>There is a problem</h1>
+      </>
+    );
+  }
+  console.log(sortedAllData);
+
   //#region Add New Title Key
   const addedNewKeyWorkData = sortedAllData.map((data) => {
     return {
@@ -27,10 +34,10 @@ const Experience = ({ data }) => {
 
   return (
     <>
-      <div className={styles["experience-main"]}>
+      <div className={styles["circle-box-main"]}>
         <h1>Work Experiences</h1>
         <h2>What I have done</h2>
-        <div className={styles["experiences-content"]}>
+        <div className={styles["circle-box-content"]}>
           {addedNewKeyWorkData?.map((data) => {
             return (
               <div
@@ -57,12 +64,12 @@ const Experience = ({ data }) => {
 export default Experience;
 
 export async function getStaticProps(context) {
-  const result = await getAxios("experience");
+  const result = await getApi("experience");
 
   return {
     props: {
       data: result,
     },
-    revalidate: 10,
+    revalidate: process.env.REVALIDATE_VALUE,
   };
 }

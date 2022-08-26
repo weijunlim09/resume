@@ -1,15 +1,24 @@
 import Image from "next/image";
 import styles from "../styles/EducationCardContainer.module.scss";
-const EducationCardContainer = ({ data, props }) => {
-  let { data: eduData } = data;
-
+const EducationCardContainer = ({ data: eduData, props }) => {
   const { image, schoolName } = eduData;
+
+  const keysToShow = [
+    "academic",
+    "dateStart",
+    "dateEnd",
+    "institute",
+    "result",
+    "status",
+    "type",
+  ];
 
   const IMAGE_WIDTH = 900;
   const IMAGE_HEIGHT = 400;
   eduData = Object.entries(eduData).filter((data) => {
-    return !data[0].startsWith("image");
+    return keysToShow.includes(data[0]);
   });
+  console.log(eduData);
 
   return (
     <>
@@ -51,7 +60,7 @@ const EducationCardContainer = ({ data, props }) => {
                       ? data[1].length > 1
                         ? data[1].join(" , ")
                         : data[1]
-                      : data[1]}
+                      : data[1].toUpperCase()}
                   </span>
                 </div>
               </div>
