@@ -36,6 +36,8 @@ export default function Home({ data }) {
     tertiaryEduData,
   } = data;
 
+  console.log(profileData);
+
   //#region Sorting Work Experience
   const experiences = [...promoterData, ...softwareDeveloperData];
   const { sorted: sortedExperiences } = useSortDescDate(
@@ -129,9 +131,9 @@ export default function Home({ data }) {
 
         <BoxContainer title="Profile">
           <div className={styles["short-profile"]}>
-            {profileData?.["show"] && (
+            {profileData?.[0]["show"] && (
               <div
-                dangerouslySetInnerHTML={{ __html: profileData?.["data"] }}
+                dangerouslySetInnerHTML={{ __html: profileData?.[0]["data"] }}
               ></div>
             )}
           </div>
@@ -317,6 +319,6 @@ export async function getStaticProps() {
     props: {
       data,
     },
-    revalidate: process.env.REVALIDATE_VALUE,
+    revalidate: Number(process.env.REVALIDATE_VALUE),
   };
 }

@@ -16,6 +16,11 @@ const nextConfig = {
       "thumbs.dreamstime.com",
     ],
   },
+  experimental: {
+    images: {
+      allowFutureImage: true,
+    },
+  },
 };
 
 module.exports = nextConfig;

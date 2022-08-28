@@ -17,6 +17,6 @@ export async function getStaticProps() {
     props: {
       data,
     },
-    revalidate: process.env.REVALIDATE_VALUE,
+    revalidate: Number(process.env.REVALIDATE_VALUE),
   };
 }

@@ -1,27 +1,92 @@
 .global-main {
   width: 100%;
   height: fit-content;
-  // height: 100%;
-  display: flex;
-  flex-direction: column;
-  position: relative;
+  scroll-behavior: smooth;
   background: linear-gradient(
     90deg,
-    rgba(247, 202, 201, 1) 0%,
+    rgba(179, 206, 229, 1) 0%,
     white 50%,
-
-    rgba(179, 206, 229, 1) 100%
+    rgba(247, 202, 201, 1) 100%
   );
+  // height: 100%;
+  // display: flex;
+  // flex-direction: column;
+  // position: relative;
+  // background: linear-gradient(
+  //   90deg,
+  //   rgba(247, 202, 201, 1) 0%,
+  //   white 50%,
 
-  > :not(span) {
-    z-index: 1;
-  }
+  //   rgba(179, 206, 229, 1) 100%
+  // );
+
+  // > :not(span) {
+  //   z-index: 1;
+  // }
+  // height: 100vh;
+  // overflow-y: auto;
+  // overflow-x: hidden;
+  // perspective: 10px;
 }
 
 .global-body {
   // overflow: auto;
   width: 100%;
   height: 100%;
-  margin-bottom: 50px;
-  // background-color: green;
+  // margin-bottom: 50px;
+  scroll-behavior: smooth;
+  background: linear-gradient(
+    90deg,
+    rgba(179, 206, 229, 1) 0%,
+    white 50%,
+    rgba(247, 202, 201, 1) 100%
+  );
+}
+
+@keyframes left-load {
+  0% {
+    transform: translateX(-1000%);
+  }
+  50% {
+    transform: translateX(-500%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes right-load {
+  0% {
+    transform: translateX(1000%);
+  }
+  50% {
+    transform: translateX(500%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes pop-out-load-1-1 {
+  0% {
+    transform: scale(0);
+  }
+  90% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes pop-out-load-1-5 {
+  0% {
+    transform: scale(0);
+  }
+  90% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
 }

@@ -6,10 +6,19 @@ $header-button-load-time: 0.5s;
 $body-left-load-time: 0.6s;
 $body-right-load-time: 0.6s;
 $body-content-load-time: 0.8s;
+$sub-body-content-load-time: 0.8s;
 
 $work-card-hover-time: 0.3s;
+$header-delay: 0.8s;
+
+$experience-header-delay: 0.3s;
+$experience-items-delay: 0.5s;
+
+$education-header-delay: 0.3s;
+$education-items-delay: 0.5s;
+
 @mixin tablet {
-  @media only screen and (max-width: 1000px) {
+  @media only screen and (max-width: 1300px) {
     @content;
   }
 }

@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
 import useFetch from "../hooks/useFetch";
+
 import styles from "../styles/Header.module.scss";
 import Button from "./Button.jsx";
 
@@ -18,7 +19,6 @@ const Header = () => {
     setPath(router.asPath);
   }, [router]);
 
-  // console.log(router);
   return (
     <>
       <div className={styles["header-main"]}>
@@ -28,12 +28,16 @@ const Header = () => {
         {/* might add something ^ in the future */}
         <div className={styles["buttons"]}>
           <div className={styles["left-buttons"]}>
+            <ul></ul>
+          </div>
+          <div className={styles["right-buttons"]}>
             <ul>
               <li>
-                <Link href="/profile" passHref>
+                <Link href="/" passHref>
                   <Button
                     isLink="true"
-                    imgSrc="https://img.icons8.com/ios-glyphs/30/000000/user--v1.png"
+                    isHome="true"
+                    imgSrc="https://img.icons8.com/material-outlined/24/000000/home--v2.png"
                   ></Button>
                 </Link>
               </li>
@@ -51,27 +55,6 @@ const Header = () => {
                   <Button
                     isLink="true"
                     imgSrc="https://img.icons8.com/ios-glyphs/30/000000/school-building.png"
-                  ></Button>
-                </Link>
-              </li>
-              <li>
-                <Link href="/skills" passHref>
-                  <Button
-                    isLink="true"
-                    imgSrc="https://img.icons8.com/ios-glyphs/30/000000/development-skill.png"
-                  ></Button>
-                </Link>
-              </li>
-            </ul>
-          </div>
-          <div className={styles["right-buttons"]}>
-            <ul>
-              <li>
-                <Link href="/" passHref>
-                  <Button
-                    isLink="true"
-                    isHome="true"
-                    imgSrc="https://img.icons8.com/material-outlined/24/000000/home--v2.png"
                   ></Button>
                 </Link>
               </li>

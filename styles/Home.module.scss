@@ -1,36 +1,6 @@
 @use "./mixin.scss" as mixin;
 @import "global.module.scss";
 
-$marginFromHeader: "50px 0";
-
-@keyframes left-load {
-  0% {
-    transform: translateX(-1000%);
-  }
-
-  50% {
-    transform: translateX(-500%);
-  }
-
-  100% {
-    transform: translateX(0);
-  }
-}
-
-@keyframes right-load {
-  0% {
-    transform: translateX(1000%);
-  }
-
-  50% {
-    transform: translateX(500%);
-  }
-
-  100% {
-    transform: translateX(0);
-  }
-}
-
 .home-main {
   @extend .global-body;
   display: flex;
@@ -141,7 +111,7 @@ $marginFromHeader: "50px 0";
   > * {
     width: 100%;
     height: fit-content;
-    // font-size: 13px;
+    font-size: 0.7em;
   }
 
   > .label {
@@ -152,7 +122,6 @@ $marginFromHeader: "50px 0";
 
   > .value {
     flex: 3;
-
     display: flex;
     flex-direction: column;
 
@@ -162,12 +131,13 @@ $marginFromHeader: "50px 0";
       justify-content: flex-start;
       cursor: pointer;
       padding: 2%;
-      border: 5px solid rgb(221, 146, 146);
       border-radius: 5%;
+      text-decoration: underline;
 
       &:hover {
         background-color: rgb(221, 146, 146);
         color: #fff;
+        transition: 0.2s linear;
       }
     }
 

@@ -1,16 +1,5 @@
 @use "./mixin.scss" as mixin;
-
-@keyframes body-content-load {
-  0% {
-    transform: scale(0);
-  }
-  90% {
-    transform: scale(1.2);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
+@import "./global.module.scss";
 
 .box-container-main {
   width: calc(100% - 100px);
@@ -21,7 +10,7 @@
   margin-bottom: 20px;
 
   > * {
-    animation-name: body-content-load;
+    animation-name: pop-out-load-1-1;
     animation-duration: mixin.$body-content-load-time;
     animation-timing-function: ease-in;
     animation-delay: mixin.$body-left-load-time;
@@ -35,7 +24,7 @@
     text-align: center;
 
     > span {
-      text-shadow: 2px 2px 10px #070707;
+      text-shadow: 2px 2px 20px #070707;
     }
   }
 }

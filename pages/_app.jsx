@@ -1,10 +1,11 @@
+import Image from "next/future/image";
 import Head from "next/head";
-import Image from "next/image";
 import React, { createContext, useState } from "react";
 import { Provider } from "react-redux";
 import Footer from "../components/Footer.jsx";
 import Header from "../components/Header.jsx";
-import bgImage from "../public/static/mountain2.jpg";
+import Mountain from "../public/static/Mountain.png";
+import Trees from "../public/static/Trees.png";
 import store from "../redux/store";
 import globalStyle from "../styles/global.module.scss";
 import "../styles/styles.css";
@@ -15,7 +16,7 @@ import { getAxios } from "../utils/getAxios.js";
 export const AppContext = createContext();
 
 function MyApp({ Component, pageProps }) {
-  const iconCdn = "https://img.icons8.com/nolan/64/resume.png";
+  const iconCdn = "https://img.icons8.com/nolan/512/resume.png";
 
   if (Component.getLayout) {
     return Component.getLayout(<Component {...pageProps}></Component>);
@@ -27,16 +28,36 @@ function MyApp({ Component, pageProps }) {
   return (
     <React.StrictMode>
       <Provider store={store}>
+        <header>
+          <Image
+            src={Mountain}
+            className={globalStyle["background"]}
+            alt="Mountain"
+            blurDataURL={Mountain["blurDataURL"]}
+            id="background"
+            loading="eager"
+          ></Image>
+          <Image
+            src={Trees}
+            className={globalStyle["background"]}
+            alt="Mountain"
+            blurDataURL={Trees["blurDataURL"]}
+            id="foreground"
+            loading="eager"
+          ></Image>
+          <h1>Welcome</h1>
+        </header>
+
         <div className={globalStyle["global-main"]}>
           <AppContext.Provider value={{ testing }}>
             {/* <Image
-            src={bgImage["src"]}
-            alt={bgImage.toString()}
-            layout="fill"
-            objectFit="cover"
-            objectPosition="topleft"
-            blurDataURL={bgImage["blurDataURL"]}
-          ></Image> */}
+              src={bgImage["src"]}
+              alt={bgImage.toString()}
+              layout="fill"
+              objectFit="cover"
+              objectPosition="topleft"
+              blurDataURL={bgImage["blurDataURL"]}
+            ></Image> */}
             <Head>
               <title>Resume Project</title>
               <meta
@@ -46,6 +67,7 @@ function MyApp({ Component, pageProps }) {
               <meta property="og:title" content="Resume Project" key="title" />
               <link rel="icon" href={iconCdn}></link>
             </Head>
+
             <Header></Header>
             <Component {...pageProps} />
             <Footer></Footer>

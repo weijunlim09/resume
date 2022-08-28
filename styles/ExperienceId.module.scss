@@ -1,13 +1,26 @@
 @use "./mixin.scss" as mixin;
-
+@import "./global.module.scss";
 @import "./Home.module.scss";
 
 .experience-id-main {
-  width: 100%;
-  height: 100%;
+  @extend .global-body;
 
   > h1 {
     text-align: center;
+    animation: pop-out-load-1-1 mixin.$experience-header-delay linear;
+  }
+
+  > * {
+    :nth-child(odd) {
+      animation-name: left-load;
+      animation-duration: mixin.$experience-items-delay;
+      animation-timing-function: linear;
+    }
+    :nth-child(even) {
+      animation-name: right-load;
+      animation-duration: mixin.$experience-items-delay;
+      animation-timing-function: linear;
+    }
   }
 
   > hr {

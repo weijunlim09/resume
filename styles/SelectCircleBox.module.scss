@@ -1,11 +1,21 @@
+@use "./mixin.scss" as mixin;
 @import "global.module.scss";
 
+// used in explicit edu
 .circle-box-main {
   @extend .global-body;
 
-  h1,
+  > h1 {
+    animation: left-load mixin.$header-delay linear;
+  }
+  > h2 {
+    animation: right-load mixin.$header-delay linear;
+  }
+
+  > h1,
   h2 {
     text-align: center;
+    text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2);
   }
 
   > .circle-box-content {
@@ -16,6 +26,14 @@
     > * {
       justify-self: center;
       margin: 20px 0;
+      border: 2px solid black;
+      border-radius: 20px;
+
+      :nth-child(even) {
+        animation-name: pop-out-load-1-1;
+        animation-duration: mixin.$sub-body-content-load-time;
+        animation-timing-function: ease-in;
+      }
     }
   }
 }

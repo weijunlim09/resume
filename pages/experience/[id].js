@@ -20,10 +20,10 @@ const ExperienceId = ({ data }) => {
   const startDate = exp["startDate"].split("/")[0];
   const endDate = exp["endDate"].split("/")[0];
 
-  const dynamicStartDate = `https://img.icons8.com/fluency/48/000000/calendar-${Number(
+  const dynamicStartDate = `https://img.icons8.com/fluency/512/000000/calendar-${Number(
     startDate
   ).toString()}.png`;
-  const dynamicEndDate = `https://img.icons8.com/fluency/48/000000/calendar-${Number(
+  const dynamicEndDate = `https://img.icons8.com/fluency/512/000000/calendar-${Number(
     endDate
   ).toString()}.png`;
   return (
@@ -36,7 +36,7 @@ const ExperienceId = ({ data }) => {
           <div>
             <div className={styles["logo-circle"]}>
               <Image
-                src="https://img.icons8.com/fluency/48/000000/new-company.png"
+                src="https://img.icons8.com/fluency/512/000000/new-company.png"
                 alt="Company"
                 width={LOGO_WIDTH}
                 height={LOGO_HEIGHT}
@@ -49,7 +49,7 @@ const ExperienceId = ({ data }) => {
           <div>
             <div className={styles["logo-circle"]}>
               <Image
-                src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/000000/external-description-copywriting-flaticons-lineal-color-flat-icons-2.png"
+                src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/512/000000/external-description-copywriting-flaticons-lineal-color-flat-icons-2.png"
                 alt="Company"
                 width={LOGO_WIDTH}
                 height={LOGO_HEIGHT}
@@ -62,7 +62,7 @@ const ExperienceId = ({ data }) => {
           <div>
             <div className={styles["logo-circle"]}>
               <Image
-                src="https://img.icons8.com/color/48/000000/malaysia.png"
+                src="https://img.icons8.com/color/512/000000/malaysia.png"
                 alt="Company"
                 width={LOGO_WIDTH}
                 height={LOGO_HEIGHT}
@@ -75,7 +75,7 @@ const ExperienceId = ({ data }) => {
           <div>
             <div className={styles["logo-circle"]}>
               <Image
-                src="https://img.icons8.com/dusk/64/000000/marker.png"
+                src="https://img.icons8.com/dusk/512/000000/marker.png"
                 alt="Company"
                 width={LOGO_WIDTH}
                 height={LOGO_HEIGHT}
@@ -88,7 +88,7 @@ const ExperienceId = ({ data }) => {
           <div>
             <div className={styles["logo-circle"]}>
               <Image
-                src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/000000/external-products-industry-flaticons-lineal-color-flat-icons.png"
+                src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/512/000000/external-products-industry-flaticons-lineal-color-flat-icons.png"
                 alt="Company"
                 width={LOGO_WIDTH}
                 height={LOGO_HEIGHT}

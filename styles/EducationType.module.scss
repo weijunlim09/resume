@@ -1,7 +1,9 @@
 @use "./mixin.scss" as mixin;
 @import "./Home.module.scss";
+@import "./global.module.scss";
 
 .education-type-main {
+  @extend .global-body;
   width: 100%;
   height: 100%;
   // background-color: orange;
@@ -11,6 +13,7 @@
 
   > h1 {
     text-align: center;
+    animation: pop-out-load-1-1 mixin.$education-header-delay linear;
   }
 
   > .education-type-content {
@@ -42,6 +45,15 @@
         grid-template-columns: repeat(3, 1fr);
         gap: 2rem;
         position: relative;
+
+        > * {
+          &:nth-child(odd) {
+            animation: right-load mixin.$education-items-delay linear;
+          }
+          &:nth-child(even) {
+            animation: left-load mixin.$education-items-delay linear;
+          }
+        }
 
         :first-child {
           grid-column: 1 / span 2;
