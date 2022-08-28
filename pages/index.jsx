@@ -36,8 +36,6 @@ export default function Home({ data }) {
     tertiaryEduData,
   } = data;
 
-  console.log(profileData);
-
   //#region Sorting Work Experience
   const experiences = [...promoterData, ...softwareDeveloperData];
   const { sorted: sortedExperiences } = useSortDescDate(
@@ -261,8 +259,8 @@ export default function Home({ data }) {
             })}
           </div>
         </BoxContainer>
-        <BoxContainer title="Self Learn Technical Skills">
-          <div className={styles["skills"]}>
+        <BoxContainer title="Self Learn Technical Skills" id="self-learn">
+          <div className={styles["skills"]} id="self-learn">
             {selfLearnTechnicalData?.map((data, index) => {
               return (
                 <SkillCardContainer

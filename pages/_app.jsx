@@ -33,31 +33,26 @@ function MyApp({ Component, pageProps }) {
             src={Mountain}
             className={globalStyle["background"]}
             alt="Mountain"
-            blurDataURL={Mountain["blurDataURL"]}
             id="background"
             loading="eager"
+            placeholder="blur"
           ></Image>
           <Image
             src={Trees}
             className={globalStyle["background"]}
             alt="Mountain"
-            blurDataURL={Trees["blurDataURL"]}
             id="foreground"
             loading="eager"
+            placeholder="blur"
           ></Image>
-          <h1>Welcome</h1>
+          <div className="background-text">
+            <h1>Welcome</h1>
+            <a href="#cool-section">Go To Cool Section</a>
+          </div>
         </header>
 
-        <div className={globalStyle["global-main"]}>
+        <div className={globalStyle["global-main"]} id="cool-section">
           <AppContext.Provider value={{ testing }}>
-            {/* <Image
-              src={bgImage["src"]}
-              alt={bgImage.toString()}
-              layout="fill"
-              objectFit="cover"
-              objectPosition="topleft"
-              blurDataURL={bgImage["blurDataURL"]}
-            ></Image> */}
             <Head>
               <title>Resume Project</title>
               <meta

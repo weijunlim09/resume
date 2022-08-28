@@ -24,7 +24,7 @@ const Header = () => {
       <div className={styles["header-main"]}>
         <div className={styles["logo"]}></div>
 
-        {/* <div style={{ display: "none" }}>Empty</div> */}
+        <div style={{ display: "none" }}></div>
         {/* might add something ^ in the future */}
         <div className={styles["buttons"]}>
           <div className={styles["left-buttons"]}>
