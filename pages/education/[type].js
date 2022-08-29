@@ -6,7 +6,6 @@ import { queryWithParams } from "../../utils/api/queryWithParams";
 
 const EduType = ({ data }) => {
   const router = useRouter();
-  console.log(data);
 
   const LOGO_WIDTH = "100";
   const LOGO_HEIGHT = "100";
@@ -38,7 +37,7 @@ const EduType = ({ data }) => {
                       width={LOGO_WIDTH}
                       height={LOGO_HEIGHT}
                     ></Image>
-                    <h7>Start Date</h7>
+                    <h3>Start Date</h3>
                     <span>{edu["dateStart"]}</span>
                   </div>
                   <div>
@@ -48,7 +47,7 @@ const EduType = ({ data }) => {
                       width={LOGO_WIDTH}
                       height={LOGO_HEIGHT}
                     ></Image>
-                    <h7>End Date</h7>
+                    <h3>End Date</h3>
                     <span>{edu["dateEnd"]}</span>
                   </div>
                   <div>
@@ -58,7 +57,7 @@ const EduType = ({ data }) => {
                       width={LOGO_WIDTH}
                       height={LOGO_HEIGHT}
                     ></Image>
-                    <h7>Institute</h7>
+                    <h3>Institute</h3>
                     <span>{edu["institute"]}</span>
                   </div>
                   <div>
@@ -68,7 +67,7 @@ const EduType = ({ data }) => {
                       width={LOGO_WIDTH}
                       height={LOGO_HEIGHT}
                     ></Image>
-                    <h7>Result</h7>
+                    <h3>Result</h3>
                     <span>{edu["result"].join(" , ")}</span>
                   </div>
                   <div>
@@ -78,7 +77,7 @@ const EduType = ({ data }) => {
                       width={LOGO_WIDTH}
                       height={LOGO_HEIGHT}
                     ></Image>
-                    <h7>{edu["extra"]["description"]}</h7>
+                    <h3>{edu["extra"]["description"]}</h3>
                     {/* <div className={styles["extra"]}> */}
                     {edu["extra"]["data"].map((info, index) => {
                       return (
@@ -96,7 +95,7 @@ const EduType = ({ data }) => {
                       width={LOGO_WIDTH}
                       height={LOGO_HEIGHT}
                     ></Image>
-                    <h7>Status</h7>
+                    <h3>Status</h3>
                     <span>{edu["status"].toLocaleUpperCase()}</span>
                   </div>
                 </div>
@@ -133,6 +132,7 @@ export async function getStaticProps(context) {
   const data = await queryWithParams("Education", {
     type: type,
   });
+  console.log(data);
   return {
     props: {
       data: JSON.parse(JSON.stringify(data)),
