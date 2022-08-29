@@ -1,6 +1,8 @@
 import { useRouter } from "next/dist/client/router";
 import Image from "next/image";
 import styles from "../../styles/EducationType.module.scss";
+import { queryWithoutParams } from "../../utils/api/queryWithoutParams";
+import { queryWithParams } from "../../utils/api/queryWithParams";
 import { getApi } from "../../utils/getApi";
 
 const EduType = ({ data }) => {
@@ -111,7 +113,7 @@ const EduType = ({ data }) => {
 export default EduType;
 
 export async function getStaticPaths() {
-  const data = await getApi("education");
+  const data = await queryWithoutParams("Education");
 
   const allEduPaths = [...new Set(data.map((i) => i["type"]))].map((i) => {
     return {
@@ -129,12 +131,12 @@ export async function getStaticPaths() {
 export async function getStaticProps(context) {
   const { type } = context.params;
 
-  const data = await getApi("education", {
+  const data = await queryWithParams("Education", {
     type: type,
   });
   return {
     props: {
-      data,
+      data: JSON.parse(JSON.stringify(data)),
     },
     revalidate: Number(process.env.REVALIDATE_VALUE),
   };

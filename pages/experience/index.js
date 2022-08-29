@@ -1,22 +1,21 @@
 import { useRouter } from "next/router";
-import { useContext, useEffect, useState } from "react";
 import CircleBox from "../../components/CircleBox";
 import useSortDescDate from "../../hooks/useSortDescDate";
 import styles from "../../styles/SelectCircleBox.module.scss";
+import { queryWithoutParams } from "../../utils/api/queryWithoutParams";
 import { getApi } from "../../utils/getApi";
-import { AppContext } from "../_app";
 
 const Experience = ({ data }) => {
   const router = useRouter();
   const { sorted: sortedAllData } = useSortDescDate(data, "startDate");
-  if (data.length == 0 || !data) {
+
+  if (router.isFallback) {
     return (
       <>
         <h1>There is a problem</h1>
       </>
     );
   }
-  console.log(sortedAllData);
 
   //#region Add New Title Key
   const addedNewKeyWorkData = sortedAllData.map((data) => {
@@ -64,11 +63,11 @@ const Experience = ({ data }) => {
 export default Experience;
 
 export async function getStaticProps(context) {
-  const result = await getApi("experience");
+  const result = await queryWithoutParams("Experience");
 
   return {
     props: {
-      data: result,
+      data: JSON.parse(JSON.stringify(result)),
     },
     revalidate: Number(process.env.REVALIDATE_VALUE),
   };

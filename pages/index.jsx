@@ -1,4 +1,3 @@
-import { getPageFiles } from "next/dist/server/get-page-files.js";
 import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
@@ -15,8 +14,9 @@ import {
   useContactTypeQuery,
 } from "../redux/services/ContactApi";
 import styles from "../styles/Home.module.scss";
-import { getApi } from "../utils/getApi";
-import { getAxios } from "../utils/getAxios.js";
+
+import { queryWithoutParams } from "../utils/api/queryWithoutParams";
+import { queryWithParams } from "../utils/api/queryWithParams";
 
 // default page
 export default function Home({ data }) {
@@ -35,6 +35,8 @@ export default function Home({ data }) {
     secondaryEduData,
     tertiaryEduData,
   } = data;
+
+  console.log(data);
 
   //#region Sorting Work Experience
   const experiences = [...promoterData, ...softwareDeveloperData];
@@ -283,39 +285,36 @@ export async function getStaticProps() {
   // we cannot use getStaticProps in Components - only applicable to pages
 
   const data = {
-    contactData: await getApi("contact"),
-    selfIntroData: await getApi("introduction"),
-    profileData: await getApi("profile"),
-    promoterData: await getApi("experience", {
+    contactData: await queryWithoutParams("Contact"),
+    selfIntroData: await queryWithoutParams("Introduction"),
+    profileData: await queryWithoutParams("Profile"),
+    extraDetailsData: await queryWithoutParams("Extra"),
+    promoterData: await queryWithParams("Experience", {
       type: "Promoter",
     }),
-    softwareDeveloperData: await getApi("experience", {
+    softwareDeveloperData: await queryWithParams("Experience", {
       type: "Software Developer",
     }),
-    extraDetailsData: await getApi("extra"),
-    technicalSkillsData: await getApi("skills", {
+    technicalSkillsData: await queryWithParams("Skills", {
       type: "technical",
     }),
-    softSkillsData: await getApi("skills", {
+    softSkillsData: await queryWithParams("Skills", {
       type: "soft",
     }),
-    selfLearnSkillsData: await getApi("skills", {
+    selfLearnSkillsData: await queryWithParams("Skills", {
       type: "selfLearn",
     }),
-    secondaryEduData: await getApi("education", {
+    secondaryEduData: await queryWithParams("Education", {
       type: "secondary",
     }),
-    tertiaryEduData: await getApi("education", {
+    tertiaryEduData: await queryWithParams("Education", {
       type: "tertiary",
     }),
   };
 
-  const newData = await getApi("contact");
-
-  console.log(newData);
   return {
     props: {
-      data,
+      data: JSON.parse(JSON.stringify(data)),
     },
     revalidate: Number(process.env.REVALIDATE_VALUE),
   };

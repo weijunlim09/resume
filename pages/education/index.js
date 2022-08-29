@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import CircleBox from "../../components/CircleBox";
 import useSortDescDate from "../../hooks/useSortDescDate";
 import styles from "../../styles/SelectCircleBox.module.scss";
-import { getApi } from "../../utils/getApi";
+import { queryWithoutParams } from "../../utils/api/queryWithoutParams";
 
 const Education = ({ data }) => {
   const router = useRouter();
@@ -70,11 +70,11 @@ const Education = ({ data }) => {
 export default Education;
 
 export async function getStaticProps(context) {
-  const result = await getApi("education");
+  const result = await queryWithoutParams("Education");
 
   return {
     props: {
-      data: result,
+      data: JSON.parse(JSON.stringify(result)),
     },
     revalidate: Number(process.env.REVALIDATE_VALUE),
   };

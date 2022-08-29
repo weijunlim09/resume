@@ -5,6 +5,9 @@ import Image from "next/image";
 import SkillCardContainer from "../../components/SkillCardContainer";
 import styles from "../../styles/ExperienceId.module.scss";
 
+import { queryWithoutParams } from "../../utils/api/queryWithoutParams";
+import { queryWithParams } from "../../utils/api/queryWithParams";
+
 const ExperienceId = ({ data }) => {
   const router = useRouter();
 
@@ -181,8 +184,14 @@ const ExperienceId = ({ data }) => {
 
 export default ExperienceId;
 
+// Note: You should not use fetch() to call
+// an API route in >getStaticProps. Instead,
+// directly import the logic used inside >your API route.
+// You may need to slightly refactor your code for >this approach.
+// Fetching from an external API is fine!
+
 export async function getStaticPaths() {
-  const data = await getApi("experience");
+  const data = await queryWithoutParams("Experience");
   const paths = data.map((i) => {
     return {
       params: {
@@ -199,13 +208,13 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(context) {
   const { id } = context.params;
-  const data = await getApi("experience", {
+  const data = await queryWithParams("Experience", {
     id: id,
   });
 
   return {
     props: {
-      data,
+      data: JSON.parse(JSON.stringify(data)),
     },
   };
 }

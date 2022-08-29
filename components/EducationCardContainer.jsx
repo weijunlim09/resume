@@ -18,7 +18,6 @@ const EducationCardContainer = ({ data: eduData, props }) => {
   eduData = Object.entries(eduData).filter((data) => {
     return keysToShow.includes(data[0]);
   });
-  console.log(eduData);
 
   return (
     <>

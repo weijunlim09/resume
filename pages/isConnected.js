@@ -1,9 +1,9 @@
 import { getApi } from "../utils/getApi.js";
 
-const isConnected = ({ data }) => {
+const isConnected = ({ serialized }) => {
   return (
     <>
-      <h1>{JSON.stringify(data)}</h1>
+      <h1>{JSON.stringify(serialized)}</h1>
     </>
   );
 };
@@ -11,8 +11,7 @@ const isConnected = ({ data }) => {
 export default isConnected;
 
 export async function getStaticProps() {
-  const data = await getApi("profile");
-
+  const data = {};
   return {
     props: {
       data,
