@@ -18,10 +18,10 @@ const Header = () => {
   }, [router]);
 
   const headerContent = {
-    Framework: "Next.js",
+    Framework: "Next JS",
     "Use Case": "Build & Learn",
     CSS: "SCSS/SASS",
-    Database: "MongoDB",
+    Database: "MongoDB Atlas",
     Publisher: "▲ Vercel",
     Icon: "Icons8",
   };
