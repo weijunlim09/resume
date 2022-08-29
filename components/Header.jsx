@@ -73,13 +73,13 @@ const Header = () => {
                   ></Button>
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Button
                   onClick={customButtonClicked}
                   customTitle="Refresh"
                   imgSrc="https://img.icons8.com/ios-glyphs/30/000000/refresh--v1.png"
                 ></Button>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>
