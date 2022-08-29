@@ -3,7 +3,6 @@ import Image from "next/image";
 import styles from "../../styles/EducationType.module.scss";
 import { queryWithoutParams } from "../../utils/api/queryWithoutParams";
 import { queryWithParams } from "../../utils/api/queryWithParams";
-import { getApi } from "../../utils/getApi";
 
 const EduType = ({ data }) => {
   const router = useRouter();

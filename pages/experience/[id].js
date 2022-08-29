@@ -1,10 +1,7 @@
-import { useRouter } from "next/router";
-import { getApi } from "../../utils/getApi";
-
 import Image from "next/image";
+import { useRouter } from "next/router";
 import SkillCardContainer from "../../components/SkillCardContainer";
 import styles from "../../styles/ExperienceId.module.scss";
-
 import { queryWithoutParams } from "../../utils/api/queryWithoutParams";
 import { queryWithParams } from "../../utils/api/queryWithParams";
 
@@ -15,7 +12,7 @@ const ExperienceId = ({ data }) => {
   const LOGO_HEIGHT = "100";
 
   if (data.length == 0 || !data) {
-    return <h1>An Error has occur with id {id} </h1>;
+    return <h1>An Error has occur with id </h1>;
   }
 
   const { asPath } = router;
