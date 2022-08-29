@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <>
       <div className={styles["footer-main"]}>
-        Copyright © 2022 Lim Wei Jun. All rights reserved.
+        No Copyright © 2022 Lim Wei Jun. No rights reserved.
       </div>
     </>
   );
