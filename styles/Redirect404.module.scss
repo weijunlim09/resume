@@ -1,0 +1,28 @@
+@use "./mixin.scss" as mixin;
+@import "./global.module.scss";
+
+.redirect-main {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  > .loader {
+    width: 400px;
+    height: 400px;
+    border-radius: 100%;
+    border: 5px solid black;
+    opacity: 0.7;
+    animation: redirect-loader 1s linear infinite alternate;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+
+    > span {
+      font-size: 3rem;
+    }
+  }
+}

@@ -13,6 +13,21 @@
   display: flex;
   flex-direction: column;
   animation: left-load mixin.$header-load-time ease-in;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+
+  > .header-content {
+    width: 100%;
+    height: fit-content;
+    padding: 5px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    > span {
+      font-size: 1rem;
+    }
+  }
 
   > .logo {
     width: 100px;
@@ -22,13 +37,18 @@
   > .buttons {
     width: 100%;
     height: fit-content;
-    background-color: white;
     display: flex;
-    justify-content: space-between;
+    background: linear-gradient(
+      90deg,
+      rgba(179, 206, 229, 1) 0%,
+      white 50%,
+      rgba(247, 202, 201, 1) 100%
+    );
+
     border-bottom: 1px solid rgba(179, 206, 229, 1);
 
     > * {
-      width: fit-content;
+      width: 100%;
       // height: calc(100% - 20px);
 
       @include mixin.tablet {
@@ -40,8 +60,9 @@
         margin: 0;
         padding: 0;
         overflow: hidden;
-        background-color: white;
+
         display: flex;
+        justify-content: center;
 
         > li {
           animation-name: pop-out-load-1-5;
@@ -61,10 +82,15 @@
     }
   }
   > .current-location {
-    background-color: white;
+    // background-color: white;
     padding: 10px;
     font-size: 0.8rem;
     border-bottom: 2px solid rgb(247, 202, 201, 1);
+    background: linear-gradient(
+      90deg,
+      rgba(247, 202, 201, 1) 0% white 50%,
+      rgba(179, 206, 229, 1) 100%
+    );
 
     > a {
       color: blue;

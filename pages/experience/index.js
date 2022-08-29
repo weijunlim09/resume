@@ -7,8 +7,8 @@ import { getApi } from "../../utils/getApi";
 
 const Experience = ({ data }) => {
   const router = useRouter();
-  const { sorted: sortedAllData } = useSortDescDate(data, "startDate");
 
+  const { sorted: sortedAllData } = useSortDescDate(data, "startDate");
   if (router.isFallback) {
     return (
       <>
@@ -69,6 +69,6 @@ export async function getStaticProps(context) {
     props: {
       data: JSON.parse(JSON.stringify(result)),
     },
-    revalidate: Number(process.env.REVALIDATE_VALUE),
+    revalidate: parseInt(process.env.REVALIDATE_VALUE),
   };
 }

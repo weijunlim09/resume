@@ -1,6 +1,6 @@
 import Image from "next/future/image";
 import Head from "next/head";
-import React, { createContext, useState } from "react";
+import React, { createContext, useRef, useState } from "react";
 import { Provider } from "react-redux";
 import Footer from "../components/Footer.jsx";
 import Header from "../components/Header.jsx";
@@ -17,7 +17,7 @@ export const AppContext = createContext();
 
 function MyApp({ Component, pageProps }) {
   const iconCdn = "https://img.icons8.com/nolan/512/resume.png";
-
+  const welcomeRef = useRef();
   if (Component.getLayout) {
     return Component.getLayout(<Component {...pageProps}></Component>);
   }
@@ -28,7 +28,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <React.StrictMode>
       <Provider store={store}>
-        <header>
+        {/* <header ref={welcomeRef}>
           <Image
             src={Mountain}
             className={globalStyle["background"]}
@@ -49,7 +49,7 @@ function MyApp({ Component, pageProps }) {
             <h1>Welcome</h1>
             <a href="#cool-section">Go To Cool Section</a>
           </div>
-        </header>
+        </header> */}
 
         <div className={globalStyle["global-main"]} id="cool-section">
           <AppContext.Provider value={{ testing }}>

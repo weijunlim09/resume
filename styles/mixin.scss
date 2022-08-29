@@ -18,7 +18,7 @@ $education-header-delay: 0.3s;
 $education-items-delay: 0.5s;
 
 @mixin tablet {
-  @media only screen and (max-width: 1300px) {
+  @media only screen and (max-width: 1000px) {
     @content;
   }
 }

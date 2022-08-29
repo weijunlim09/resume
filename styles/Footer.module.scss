@@ -1,7 +1,15 @@
-
-
 .footer-main {
-  height: 80px;
+  height: 50px;
   width: 100%;
-  background-color: black;
+  background: linear-gradient(
+    90deg,
+    rgba(247, 202, 201, 1) 0%,
+    white 50%,
+    rgba(179, 206, 229, 1) 100%
+  );
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.9rem;
 }

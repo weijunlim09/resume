@@ -90,3 +90,12 @@
     transform: scale(1);
   }
 }
+
+@keyframes redirect-loader {
+  0% {
+    background-color: hsl(6, 20%, 70%);
+  }
+  100% {
+    background-color: hsl(200, 20%, 95%);
+  }
+}

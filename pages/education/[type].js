@@ -132,11 +132,10 @@ export async function getStaticProps(context) {
   const data = await queryWithParams("Education", {
     type: type,
   });
-  console.log(data);
   return {
     props: {
       data: JSON.parse(JSON.stringify(data)),
     },
-    revalidate: Number(process.env.REVALIDATE_VALUE),
+    revalidate: parseInt(process.env.REVALIDATE_VALUE),
   };
 }

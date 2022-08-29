@@ -1,4 +1,5 @@
 import { useRouter } from "next/router";
+import { useEffect } from "react";
 import CircleBox from "../../components/CircleBox";
 import useSortDescDate from "../../hooks/useSortDescDate";
 import styles from "../../styles/SelectCircleBox.module.scss";
@@ -6,6 +7,7 @@ import { queryWithoutParams } from "../../utils/api/queryWithoutParams";
 
 const Education = ({ data }) => {
   const router = useRouter();
+  useEffect(() => {}, []);
   const { sorted: sortedAllData } = useSortDescDate(data, "dateStart");
   if (data.length == 0 || !data) {
     return (
@@ -76,7 +78,7 @@ export async function getStaticProps(context) {
     props: {
       data: JSON.parse(JSON.stringify(result)),
     },
-    revalidate: Number(process.env.REVALIDATE_VALUE),
+    revalidate: parseInt(process.env.REVALIDATE_VALUE),
   };
 }
 

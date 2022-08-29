@@ -6,8 +6,6 @@ const _queryWithParams = async (collectionName, query) => {
   const database = client.db("Resume");
   let sample;
 
-  console.log(query);
-
   if (Object.keys(query).length == 0) {
     sample = await database.collection(collectionName).find({}).toArray();
   } else {

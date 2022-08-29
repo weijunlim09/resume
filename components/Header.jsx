@@ -9,9 +9,7 @@ import Button from "./Button.jsx";
 import { useRouter } from "next/router";
 
 const Header = () => {
-  const customButtonClicked = () => {
-    console.log("refreshclicked");
-  };
+  const customButtonClicked = () => {};
   const router = useRouter();
   const [path, setPath] = useState("");
 
@@ -19,17 +17,34 @@ const Header = () => {
     setPath(router.asPath);
   }, [router]);
 
+  const headerContent = {
+    Framework: "Next.js",
+    "Use Case": "Build & Learn",
+    CSS: "SCSS/SASS",
+    Database: "MongoDB",
+    Publisher: "▲ Vercel",
+    Icon: "Icons8",
+  };
+
   return (
     <>
-      <div className={styles["header-main"]}>
+      <div className={styles["header-main"]} id="header-id">
         <div className={styles["logo"]}></div>
 
-        <div style={{ display: "none" }}></div>
+        <div className={styles["header-content"]}>
+          {Object.entries(headerContent).map((data, index) => {
+            return (
+              <span key={index}>
+                {data[0]} : {data[1]}
+              </span>
+            );
+          })}
+        </div>
         {/* might add something ^ in the future */}
         <div className={styles["buttons"]}>
-          <div className={styles["left-buttons"]}>
+          {/* <div className={styles["left-buttons"]}>
             <ul></ul>
-          </div>
+          </div> */}
           <div className={styles["right-buttons"]}>
             <ul>
               <li>

@@ -36,8 +36,6 @@ export default function Home({ data }) {
     tertiaryEduData,
   } = data;
 
-  console.log(data);
-
   //#region Sorting Work Experience
   const experiences = [...promoterData, ...softwareDeveloperData];
   const { sorted: sortedExperiences } = useSortDescDate(
@@ -316,6 +314,6 @@ export async function getStaticProps() {
     props: {
       data: JSON.parse(JSON.stringify(data)),
     },
-    revalidate: Number(process.env.REVALIDATE_VALUE),
+    revalidate: parseInt(process.env.REVALIDATE_VALUE),
   };
 }
