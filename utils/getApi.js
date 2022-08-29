@@ -8,7 +8,9 @@ const _getApi = async (apiEndpoint, params = {}) => {
     .join("&");
 
   const domainUri =
-    process.env.NODE_ENV === "production" ? "/" : "http://localhost:3000/";
+    process.env.NODE_ENV === "production"
+      ? "https://resume-weijunlim09.vercel.app/"
+      : "http://localhost:3000/";
 
   let response;
   let data;
@@ -16,7 +18,6 @@ const _getApi = async (apiEndpoint, params = {}) => {
 
   try {
     const api = `${domainUri}api/${apiEndpoint}?${queryString}`;
-    // const api = `/api/${apiEndpoint}?${queryString}`;
     response = await axios.get(api);
     data = await response.data;
     result = JSON.parse(JSON.stringify(data));
