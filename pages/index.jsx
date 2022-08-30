@@ -62,6 +62,7 @@ export default function Home({ data }) {
   //#region Sort Education
   const eduData = [...secondaryEduData, ...tertiaryEduData];
   const { sorted: sortedEduData } = useSortDescDate(eduData, "dateStart");
+  console.log(sortedEduData);
 
   //#endregion
 
