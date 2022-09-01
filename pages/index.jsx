@@ -191,16 +191,6 @@ export default function Home({ data }) {
             );
           })}
         </BoxContainer>
-
-        <BoxContainer title="Extra Details">
-          <div className={styles["ul-li-details"]}>
-            <ul>
-              {extraDetailsData?.map((data, index) => {
-                return <li key={index}>{data["show"] && data["data"]}</li>;
-              })}
-            </ul>
-          </div>
-        </BoxContainer>
       </div>
       <div ref={rightHomeRef} className={styles["right-home"]}>
         <BoxContainer title="Work Experience">
@@ -305,6 +295,15 @@ export default function Home({ data }) {
                 ></SkillCardContainer>
               );
             })}
+          </div>
+        </BoxContainer>
+        <BoxContainer title="Extra Details">
+          <div className={styles["ul-li-details"]}>
+            <ul>
+              {extraDetailsData?.map((data, index) => {
+                return <li key={index}>{data["show"] && data["data"]}</li>;
+              })}
+            </ul>
           </div>
         </BoxContainer>
       </div>
