@@ -1,6 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Helvetica&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500&family=Signika+Negative:wght@500&display=swap");
 html,
 body {
   margin: 0;
@@ -11,13 +9,13 @@ body {
 div,
 p {
   font-size: 21px;
-  font-family: "Lato";
+  font-family: "Quicksand";
   line-height: 1.58;
   letter-spacing: -0.003em;
 }
 
 span {
-  font-family: "Helvetica";
+  font-family: "Signika Negative";
 }
 
 a {
