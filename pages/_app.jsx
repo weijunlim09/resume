@@ -1,6 +1,6 @@
 import Image from "next/future/image";
 import Head from "next/head";
-import React, { createContext, useRef, useState } from "react";
+import React, { createContext, useEffect, useRef, useState } from "react";
 import { Provider } from "react-redux";
 import Footer from "../components/Footer.jsx";
 import Header from "../components/Header.jsx";
@@ -16,6 +16,29 @@ import { getAxios } from "../utils/getAxios.js";
 export const AppContext = createContext();
 
 function MyApp({ Component, pageProps }) {
+  function scrollGoTo() {
+    document.querySelector("#__next").scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }
+  useEffect(() => {
+    const nextApp = document.querySelector("#__next");
+    function goTop() {
+      const appHeight = nextApp.scrollTop;
+      const goTopDOM = document.querySelector("#goTop");
+      const appearThreshold = 300;
+
+      if (appHeight > appearThreshold) {
+        goTopDOM.style.setProperty("opacity", 1);
+        goTopDOM.style.setProperty("transform", "translateY(0)");
+      } else {
+        goTopDOM.style.setProperty("opacity", 0);
+        goTopDOM.style.setProperty("transform", "translateY(100px)");
+      }
+    }
+    document.querySelector("#__next").addEventListener("scroll", goTop);
+  }, []);
   const iconCdn = "https://img.icons8.com/nolan/512/resume.png";
   const welcomeRef = useRef();
   if (Component.getLayout) {
@@ -51,6 +74,8 @@ function MyApp({ Component, pageProps }) {
           </div>
         </header> */}
 
+        <div id="top"></div>
+
         <div className={globalStyle["global-main"]} id="cool-section">
           <AppContext.Provider value={{ testing }}>
             <Head>
@@ -67,6 +92,14 @@ function MyApp({ Component, pageProps }) {
             <Component {...pageProps} />
             <Footer></Footer>
           </AppContext.Provider>
+        </div>
+        <div id="goTop" onClick={scrollGoTo}>
+          <Image
+            src="https://img.icons8.com/3d-fluency/100/000000/3d-fluency-arrow-up.png"
+            width="20"
+            height="20"
+            alt="goTop"
+          ></Image>
         </div>
       </Provider>
     </React.StrictMode>
