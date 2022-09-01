@@ -52,7 +52,7 @@ const Education = ({ data }) => {
                 onClick={() => {
                   router.push(`/education/${data["type"]}`);
                 }}
-                style={{ cursor: "pointer" }}
+                className={styles["circle-wrapper"]}
                 key={index}
               >
                 <CircleBox

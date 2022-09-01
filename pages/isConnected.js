@@ -1,21 +1,19 @@
-import { getApi } from "../utils/getApi.js";
+import styles from "../styles/Sample.module.scss";
 
-const isConnected = ({ serialized }) => {
+const isConnected = ({}) => {
+  let n = 8; // Or something else
+
   return (
     <>
-      <h1>{JSON.stringify(serialized)}</h1>
+      <div className={`${styles["sample-main"]}`}>
+        {[...Array(n)].map((e, i) => (
+          <div className="busterCards" key={i}>
+            ♦
+          </div>
+        ))}
+      </div>
     </>
   );
 };
 
 export default isConnected;
-
-export async function getStaticProps() {
-  const data = {};
-  return {
-    props: {
-      data,
-    },
-    revalidate: Number(process.env.REVALIDATE_VALUE),
-  };
-}

@@ -1,5 +1,13 @@
-$primary-color: black;
-$load-time: 1.5s;
+$zero-opacity: 0;
+$full-opacity: 1;
+$appear-transform: translateY(0);
+$disappear-transform: translateY(-20px);
+$appear-transition: all 1.3s linear;
+
 :export {
-  primaryColor: $primary-color;
+  zeroOpacity: $zero-opacity;
+  fullOpacity: $full-opacity;
+  appearTransform: $appear-transform;
+  disappearTransform: $disappear-transform;
+  appearTransition: $appear-transition;
 }

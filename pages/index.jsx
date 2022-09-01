@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import BoxContainer from "../components/BoxContainer.jsx";
 import EducationCardContainer from "../components/EducationCardContainer.jsx";
 import SkillCardContainer from "../components/SkillCardContainer.jsx";
@@ -15,6 +15,7 @@ import {
 } from "../redux/services/ContactApi";
 import styles from "../styles/Home.module.scss";
 
+import variables from "../styles/variables.module.scss";
 import { queryWithoutParams } from "../utils/api/queryWithoutParams";
 import { queryWithParams } from "../utils/api/queryWithParams";
 
@@ -35,6 +36,37 @@ export default function Home({ data }) {
     secondaryEduData,
     tertiaryEduData,
   } = data;
+
+  const leftHomeRef = useRef();
+  const rightHomeRef = useRef();
+  useEffect(() => {
+    const allBoxes = [
+      ...leftHomeRef["current"]["children"],
+      ...rightHomeRef["current"]["children"],
+    ];
+    function scrollToAppear() {
+      for (let i = 0; i < allBoxes.length; i++) {
+        var windowHeight = window.innerHeight;
+        var revealTop = allBoxes[i].getBoundingClientRect().top;
+        var revealPoint = 150;
+        if (revealTop < windowHeight - revealPoint) {
+          allBoxes[i].classList.add("active");
+          allBoxes[i].classList.remove("not-active");
+        } else {
+          allBoxes[i].classList.remove("active");
+          allBoxes[i].classList.add("not-active");
+        }
+      }
+    }
+    document
+      .querySelector("#__next")
+      .addEventListener("scroll", scrollToAppear);
+
+    return () => {
+      document.querySelector("#__next").removeEventListener("scroll", null);
+    };
+    console.log(allBoxes);
+  }, []);
 
   //#region Sorting Work Experience
   const experiences = [...promoterData, ...softwareDeveloperData];
@@ -76,7 +108,7 @@ export default function Home({ data }) {
 
   return (
     <div className={styles["home-main"]}>
-      <div className={styles["left-home"]}>
+      <div ref={leftHomeRef} className={styles["left-home"]}>
         <BoxContainer title="Contact">
           <div className={styles["profile"]}>
             <Image
@@ -86,6 +118,7 @@ export default function Home({ data }) {
               height={PROFILE_IMAGE_HEIGHT}
               objectFit="contain"
             ></Image>
+            <br></br>
             <div className={styles["profile-details"]}>
               {selfIntroData?.["show"] && (
                 <span>{selfIntroData?.["name"]}</span>
@@ -125,6 +158,8 @@ export default function Home({ data }) {
                   })}
               </div>
             </div>
+            <br></br>
+            <br></br>
           </div>
         </BoxContainer>
 
@@ -169,7 +204,7 @@ export default function Home({ data }) {
           </div>
         </BoxContainer>
       </div>
-      <div className={styles["right-home"]}>
+      <div ref={rightHomeRef} className={styles["right-home"]}>
         <BoxContainer title="Work Experience">
           {sortedExperiences?.map((experience, index) => {
             return (
