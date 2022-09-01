@@ -65,7 +65,6 @@ export default function Home({ data }) {
     return () => {
       document.querySelector("#__next").removeEventListener("scroll", null);
     };
-    console.log(allBoxes);
   }, []);
 
   //#region Sorting Work Experience
@@ -94,7 +93,6 @@ export default function Home({ data }) {
   //#region Sort Education
   const eduData = [...secondaryEduData, ...tertiaryEduData];
   const { sorted: sortedEduData } = useSortDescDate(eduData, "dateStart");
-  console.log(sortedEduData);
 
   //#endregion
 

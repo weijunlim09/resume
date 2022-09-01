@@ -43,7 +43,6 @@ const Experience = ({ data }) => {
                 onClick={() => {
                   router.push(`/experience/${data["id"]}`);
                 }}
-                style={{ cursor: "pointer" }}
                 key={data["id"]}
               >
                 <CircleBox
