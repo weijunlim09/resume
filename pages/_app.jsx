@@ -1,5 +1,5 @@
-import Image from "next/future/image";
 import Head from "next/head";
+import Image from "next/image";
 import React, { createContext, useEffect, useRef, useState } from "react";
 import { Provider } from "react-redux";
 import Footer from "../components/Footer.jsx";
