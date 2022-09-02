@@ -26,15 +26,20 @@ function MyApp({ Component, pageProps }) {
     const nextApp = document.querySelector("#__next");
     function goTop() {
       const appHeight = nextApp.scrollTop;
-      const goTopDOM = document.querySelector("#goTop");
+      const goTopDOM = document.querySelector(".goTop");
       const appearThreshold = 300;
 
       if (appHeight > appearThreshold) {
-        goTopDOM.style.setProperty("opacity", 1);
-        goTopDOM.style.setProperty("transform", "translateY(0)");
+        goTopDOM.classList.add("active");
+        goTopDOM.classList.remove("not-active");
+
+        // goTopDOM.style.setProperty("opacity", 1);
+        // goTopDOM.style.setProperty("transform", "translateY(0)");
       } else {
-        goTopDOM.style.setProperty("opacity", 0);
-        goTopDOM.style.setProperty("transform", "translateY(100px)");
+        goTopDOM.classList.remove("active");
+        goTopDOM.classList.add("not-active");
+        // goTopDOM.style.setProperty("opacity", 0);
+        // goTopDOM.style.setProperty("transform", "translateY(100px)");
       }
     }
     document.querySelector("#__next").addEventListener("scroll", goTop);
@@ -93,9 +98,9 @@ function MyApp({ Component, pageProps }) {
             <Footer></Footer>
           </AppContext.Provider>
         </div>
-        <div id="goTop" onClick={scrollGoTo}>
+        <div className="goTop" onClick={scrollGoTo}>
           <Image
-            src="https://img.icons8.com/3d-fluency/100/000000/3d-fluency-arrow-up.png"
+            src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/100/000000/external-arrow-up-web-flaticons-lineal-color-flat-icons-3.png"
             width="20"
             height="20"
             alt="goTop"
