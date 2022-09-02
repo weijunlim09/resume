@@ -34,9 +34,9 @@ const EduType = ({ data }) => {
                   ></Image>
                   <div>
                     <Image
-                      src={`https://img.icons8.com/fluency/512/000000/calendar-${
+                      src={`https://img.icons8.com/fluency/512/000000/calendar-${Number(
                         edu["dateStart"].split("/")[0]
-                      }.png`}
+                      ).toString()}.png`}
                       alt="Start Date"
                       width={LOGO_WIDTH}
                       height={LOGO_HEIGHT}
@@ -46,9 +46,9 @@ const EduType = ({ data }) => {
                   </div>
                   <div>
                     <Image
-                      src={`https://img.icons8.com/fluency/512/000000/calendar-${
+                      src={`https://img.icons8.com/fluency/512/000000/calendar-${Number(
                         edu["dateEnd"].split("/")[0]
-                      }.png`}
+                      ).toString()}.png`}
                       alt="End Date"
                       width={LOGO_WIDTH}
                       height={LOGO_HEIGHT}
