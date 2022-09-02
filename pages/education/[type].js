@@ -10,6 +10,8 @@ const EduType = ({ data }) => {
   const LOGO_WIDTH = "100";
   const LOGO_HEIGHT = "100";
 
+  console.log(data);
+
   return (
     <>
       <div className={styles["education-type-main"]}>
@@ -32,8 +34,10 @@ const EduType = ({ data }) => {
                   ></Image>
                   <div>
                     <Image
-                      src="https://img.icons8.com/fluency/512/000000/calendar-20.png"
-                      alt="test"
+                      src={`https://img.icons8.com/fluency/512/000000/calendar-${
+                        edu["dateStart"].split("/")[0]
+                      }.png`}
+                      alt="Start Date"
                       width={LOGO_WIDTH}
                       height={LOGO_HEIGHT}
                     ></Image>
@@ -42,8 +46,10 @@ const EduType = ({ data }) => {
                   </div>
                   <div>
                     <Image
-                      src="https://img.icons8.com/fluency/512/000000/calendar-20.png"
-                      alt="test"
+                      src={`https://img.icons8.com/fluency/512/000000/calendar-${
+                        edu["dateEnd"].split("/")[0]
+                      }.png`}
+                      alt="End Date"
                       width={LOGO_WIDTH}
                       height={LOGO_HEIGHT}
                     ></Image>
@@ -53,7 +59,7 @@ const EduType = ({ data }) => {
                   <div>
                     <Image
                       src="https://img.icons8.com/external-others-iconmarket/512/000000/external-building-types-of-building-others-iconmarket-66.png"
-                      alt="test"
+                      alt="Institute"
                       width={LOGO_WIDTH}
                       height={LOGO_HEIGHT}
                     ></Image>
@@ -63,7 +69,7 @@ const EduType = ({ data }) => {
                   <div>
                     <Image
                       src="https://img.icons8.com/external-justicon-lineal-color-justicon/512/000000/external-result-business-management-justicon-lineal-color-justicon.png"
-                      alt="test"
+                      alt="Result"
                       width={LOGO_WIDTH}
                       height={LOGO_HEIGHT}
                     ></Image>
@@ -73,12 +79,11 @@ const EduType = ({ data }) => {
                   <div>
                     <Image
                       src="https://img.icons8.com/clouds/512/000000/information.png"
-                      alt="test"
+                      alt="Extra"
                       width={LOGO_WIDTH}
                       height={LOGO_HEIGHT}
                     ></Image>
                     <h3>{edu["extra"]["description"]}</h3>
-                    {/* <div className={styles["extra"]}> */}
                     {edu["extra"]["data"].map((info, index) => {
                       return (
                         <span key={index} className={styles["extra-span"]}>
@@ -91,7 +96,7 @@ const EduType = ({ data }) => {
                   <div>
                     <Image
                       src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/512/000000/external-status-agile-flaticons-lineal-color-flat-icons-2.png"
-                      alt="test"
+                      alt="Status"
                       width={LOGO_WIDTH}
                       height={LOGO_HEIGHT}
                     ></Image>
