@@ -26,10 +26,11 @@ const ExperienceId = ({ data }) => {
   const dynamicEndDate = `https://img.icons8.com/fluency/512/000000/calendar-${Number(
     endDate
   ).toString()}.png`;
+  console.log(data);
   return (
     <>
       <div className={styles["experience-id-main"]}>
-        <h1>{asPath || "Path not found"}</h1>
+        <h1>{`${exp["title"]}` || "Error!"}</h1>
         <hr></hr>
         <div className={styles["experience-id-company"]}>
           <h2 className={styles["grid-col-span-3"]}>What Company is this?</h2>
