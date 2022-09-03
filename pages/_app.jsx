@@ -32,14 +32,9 @@ function MyApp({ Component, pageProps }) {
       if (appHeight > appearThreshold) {
         goTopDOM.classList.add("active");
         goTopDOM.classList.remove("not-active");
-
-        // goTopDOM.style.setProperty("opacity", 1);
-        // goTopDOM.style.setProperty("transform", "translateY(0)");
       } else {
         goTopDOM.classList.remove("active");
         goTopDOM.classList.add("not-active");
-        // goTopDOM.style.setProperty("opacity", 0);
-        // goTopDOM.style.setProperty("transform", "translateY(100px)");
       }
     }
     document.querySelector("#__next").addEventListener("scroll", goTop);

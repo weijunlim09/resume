@@ -7,7 +7,7 @@ import EducationCardContainer from "../components/EducationCardContainer.jsx";
 import SkillCardContainer from "../components/SkillCardContainer.jsx";
 import WorkCardContainer from "../components/WorkCardContainer.jsx";
 import useSortDescDate from "../hooks/useSortDescDate.js";
-import profilePic from "../public/static/Header/lwj.png";
+import profilePic from "../public/static/Header/lwj2.jpg";
 import {
   useAddContactMutation,
   useContactsQuery,
