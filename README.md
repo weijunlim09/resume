@@ -1,6 +1,6 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-
+https://docs.google.com/document/d/1LINjZtK9pPp1Lf6k9ThzZnHXkCsibQAVWfTqH2OEk0g/edit?usp=sharing
 
 ## Timeline
 
